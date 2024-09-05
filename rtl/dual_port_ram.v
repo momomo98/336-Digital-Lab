@@ -62,7 +62,7 @@ always@(posedge clk or negedge rst_n)begin
                 mem[waddr+1] <= wdata[31:16];
             end
             2'b10:begin
-                mem[waddr+1] <= wdata[31:16];
+                mem[waddr] <= wdata[31:16];
             end
             2'b01:begin
                 mem[waddr] <= wdata[15:0];

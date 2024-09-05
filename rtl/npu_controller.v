@@ -47,7 +47,7 @@ reg [4:0] curr_state;
 reg [4:0] next_state;
 
 reg [1:0] wr_eop_data_cnt;
-reg [1:0] wr_eop_weight_cnt;
+reg [0:0] wr_eop_weight_cnt;
 
 reg [4:0] pe_compute_cnt;
 
@@ -59,7 +59,7 @@ always@(posedge clk or negedge rst_n)
 begin
     if(~rst_n)
         wr_eop_data_cnt <= 2'd0;
-    else if((wr_eop_data_cnt & wr_eop_weight_cnt) == 2'b11)
+    else if(wr_eop_data_cnt == 2'b11 && wr_eop_weight_cnt == 1'b1)
         wr_eop_data_cnt <= 2'd0;
     else if(wr_eop_data)
         wr_eop_data_cnt <= wr_eop_data_cnt + 1'b1;
@@ -70,11 +70,11 @@ end
 always@(posedge clk or negedge rst_n)
 begin
     if(~rst_n)
-        wr_eop_weight_cnt <= 2'd0;
-    else if((wr_eop_data_cnt & wr_eop_weight_cnt) == 2'b11)
-        wr_eop_weight_cnt <= 2'd0;
+        wr_eop_weight_cnt <= 1'd0;
+    else if(wr_eop_data_cnt == 2'b11 && wr_eop_weight_cnt == 1'b1)
+        wr_eop_weight_cnt <= 1'd0;
     else if(wr_eop_weight)
-        wr_eop_weight_cnt <= wr_eop_weight_cnt + 1'b1;
+        wr_eop_weight_cnt <= 1'b1;
     else
         wr_eop_weight_cnt <= wr_eop_weight_cnt;
 end
@@ -84,7 +84,7 @@ begin
     if(~rst_n)
         load_finish <= 1'd0;
     else
-        load_finish <= (wr_eop_data_cnt & wr_eop_weight_cnt) == 2'b11;
+        load_finish <= (wr_eop_data_cnt == 2'b11 && wr_eop_weight_cnt == 1'b1);
 end
 
 always@(posedge clk or negedge rst_n)

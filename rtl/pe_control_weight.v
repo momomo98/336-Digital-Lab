@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2024/08/28 23:07:32
+// Create Date: 2024/09/05 19:23:38
 // Design Name: 
-// Module Name: pe_control
+// Module Name: pe_control_weight
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -19,8 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
-module pe_control_data(
+module pe_control_weight(
     input wire clk,
     input wire rst_n,
     input wire wr_sop,
@@ -113,15 +112,14 @@ wire ram7_rd_en;
 wire [3:0] ram7_rd_addr;
 wire [15:0] ram7_rd_data;
 
-ram_wr_control_data 
+ram_wr_control_weight
 #(
-    .bus_data_vld(10'b00_0000_0110),
-    .waddr1(4'd0), .wr_strb1(2'b11),
-    .waddr2(4'd2), .wr_strb2(2'b01),
-    .waddr3(4'd3), .wr_strb3(2'b11),
-    .waddr4(4'd5), .wr_strb4(2'b01),
-    .waddr5(4'd6), .wr_strb5(2'b11),
-    .waddr6(4'd8), .wr_strb6(2'b01)
+    .beat_lsb(0),   .beat_msb(4),
+    .wr_addr1(4'd0), .wr_strb1(2'b11),
+    .wr_addr2(4'd2), .wr_strb2(2'b11),
+    .wr_addr3(4'd4), .wr_strb3(2'b11),
+    .wr_addr4(4'd6), .wr_strb4(2'b11),
+    .wr_addr5(4'd8), .wr_strb5(2'b01)
 )ram_wr_control_0
 (
     .clk(clk),
@@ -137,15 +135,14 @@ ram_wr_control_data
     .ram_wr_data(ram0_wr_data)
     );
 
-ram_wr_control_data  
+ram_wr_control_weight 
 #(
-    .bus_data_vld(10'b00_0000_1100),
-    .waddr1(4'd1), .wr_strb1(2'b11),
-    .waddr2(4'd3), .wr_strb2(2'b01),
-    .waddr3(4'd4), .wr_strb3(2'b11),
-    .waddr4(4'd6), .wr_strb4(2'b01),
-    .waddr5(4'd7), .wr_strb5(2'b11),
-    .waddr6(4'd9), .wr_strb6(2'b01)
+    .beat_lsb(4),   .beat_msb(8),
+    .wr_addr1(4'd1), .wr_strb1(2'b10),
+    .wr_addr2(4'd2), .wr_strb2(2'b11),
+    .wr_addr3(4'd4), .wr_strb3(2'b11),
+    .wr_addr4(4'd6), .wr_strb4(2'b11),
+    .wr_addr5(4'd8), .wr_strb5(2'b11)
 )ram_wr_control_1
 (
     .clk(clk),
@@ -161,15 +158,14 @@ ram_wr_control_data
     .ram_wr_data(ram1_wr_data)
     );
 
-ram_wr_control_data  
+ram_wr_control_weight
 #(
-    .bus_data_vld(10'b00_0001_1000),
-    .waddr1(4'd2), .wr_strb1(2'b11),
-    .waddr2(4'd4), .wr_strb2(2'b01),
-    .waddr3(4'd5), .wr_strb3(2'b11),
-    .waddr4(4'd7), .wr_strb4(2'b01),
-    .waddr5(4'd8), .wr_strb5(2'b11),
-    .waddr6(4'd10), .wr_strb6(2'b01)
+    .beat_lsb(9),   .beat_msb(13),
+    .wr_addr1(4'd2), .wr_strb1(2'b11),
+    .wr_addr2(4'd4), .wr_strb2(2'b11),
+    .wr_addr3(4'd6), .wr_strb3(2'b11),
+    .wr_addr4(4'd8), .wr_strb4(2'b11),
+    .wr_addr5(4'd10), .wr_strb5(2'b01)
 )ram_wr_control_2
 (
     .clk(clk),
@@ -185,15 +181,14 @@ ram_wr_control_data
     .ram_wr_data(ram2_wr_data)
     );
    
-ram_wr_control_data  
+ram_wr_control_weight 
 #(
-    .bus_data_vld(10'b00_0011_0000),
-    .waddr1(4'd3), .wr_strb1(2'b11),
-    .waddr2(4'd5), .wr_strb2(2'b01),
-    .waddr3(4'd6), .wr_strb3(2'b11),
-    .waddr4(4'd8), .wr_strb4(2'b01),
-    .waddr5(4'd9), .wr_strb5(2'b11),
-    .waddr6(4'd11), .wr_strb6(2'b01)
+    .beat_lsb(13),   .beat_msb(17),
+    .wr_addr1(4'd3), .wr_strb1(2'b10),
+    .wr_addr2(4'd4), .wr_strb2(2'b11),
+    .wr_addr3(4'd6), .wr_strb3(2'b11),
+    .wr_addr4(4'd8), .wr_strb4(2'b11),
+    .wr_addr5(4'd10), .wr_strb5(2'b11)
 )ram_wr_control_3
 (
     .clk(clk),
@@ -209,15 +204,14 @@ ram_wr_control_data
     .ram_wr_data(ram3_wr_data)
     );
  
-ram_wr_control_data  
+ram_wr_control_weight
 #(
-    .bus_data_vld(10'b00_0110_0000),
-    .waddr1(4'd4), .wr_strb1(2'b11),
-    .waddr2(4'd6), .wr_strb2(2'b01),
-    .waddr3(4'd7), .wr_strb3(2'b11),
-    .waddr4(4'd9), .wr_strb4(2'b01),
-    .waddr5(4'd10), .wr_strb5(2'b11),
-    .waddr6(4'd12), .wr_strb6(2'b01)
+    .beat_lsb(18),   .beat_msb(22),
+    .wr_addr1(4'd4), .wr_strb1(2'b11),
+    .wr_addr2(4'd6), .wr_strb2(2'b11),
+    .wr_addr3(4'd8), .wr_strb3(2'b11),
+    .wr_addr4(4'd10), .wr_strb4(2'b11),
+    .wr_addr5(4'd12), .wr_strb5(2'b01)
 )ram_wr_control_4
 (
     .clk(clk),
@@ -233,15 +227,14 @@ ram_wr_control_data
     .ram_wr_data(ram4_wr_data)
     );
     
-ram_wr_control_data  
+ram_wr_control_weight 
 #(
-    .bus_data_vld(10'b00_1100_0000),
-    .waddr1(4'd5), .wr_strb1(2'b11),
-    .waddr2(4'd7), .wr_strb2(2'b01),
-    .waddr3(4'd8), .wr_strb3(2'b11),
-    .waddr4(4'd10), .wr_strb4(2'b01),
-    .waddr5(4'd11), .wr_strb5(2'b11),
-    .waddr6(4'd13), .wr_strb6(2'b01)
+    .beat_lsb(22),   .beat_msb(26),
+    .wr_addr1(4'd5), .wr_strb1(2'b10),
+    .wr_addr2(4'd6), .wr_strb2(2'b11),
+    .wr_addr3(4'd8), .wr_strb3(2'b11),
+    .wr_addr4(4'd10), .wr_strb4(2'b11),
+    .wr_addr5(4'd12), .wr_strb5(2'b11)
 )ram_wr_control_5
 (
     .clk(clk),
@@ -257,15 +250,14 @@ ram_wr_control_data
     .ram_wr_data(ram5_wr_data)
     ); 
    
-ram_wr_control_data  
+ram_wr_control_weight
 #(
-    .bus_data_vld(10'b01_1000_0000),
-    .waddr1(4'd6), .wr_strb1(2'b11),
-    .waddr2(4'd8), .wr_strb2(2'b01),
-    .waddr3(4'd9), .wr_strb3(2'b11),
-    .waddr4(4'd11), .wr_strb4(2'b01),
-    .waddr5(4'd12), .wr_strb5(2'b11),
-    .waddr6(4'd14), .wr_strb6(2'b01)
+    .beat_lsb(27),   .beat_msb(31),
+    .wr_addr1(4'd6), .wr_strb1(2'b11),
+    .wr_addr2(4'd8), .wr_strb2(2'b11),
+    .wr_addr3(4'd10), .wr_strb3(2'b11),
+    .wr_addr4(4'd12), .wr_strb4(2'b11),
+    .wr_addr5(4'd14), .wr_strb5(2'b01)
 )ram_wr_control_6
 (
     .clk(clk),
@@ -281,15 +273,14 @@ ram_wr_control_data
     .ram_wr_data(ram6_wr_data)
     );    
    
-ram_wr_control_data  
+ram_wr_control_weight 
 #(
-    .bus_data_vld(10'b11_0000_0000),
-    .waddr1(4'd7), .wr_strb1(2'b11),
-    .waddr2(4'd9), .wr_strb2(2'b01),
-    .waddr3(4'd10), .wr_strb3(2'b11),
-    .waddr4(4'd12), .wr_strb4(2'b01),
-    .waddr5(4'd13), .wr_strb5(2'b11),
-    .waddr6(4'd15), .wr_strb6(2'b01)
+    .beat_lsb(31),   .beat_msb(35),
+    .wr_addr1(4'd7), .wr_strb1(2'b10),
+    .wr_addr2(4'd8), .wr_strb2(2'b11),
+    .wr_addr3(4'd10), .wr_strb3(2'b11),
+    .wr_addr4(4'd12), .wr_strb4(2'b11),
+    .wr_addr5(4'd14), .wr_strb5(2'b11)
 )ram_wr_control_7
 (
     .clk(clk),
@@ -523,3 +514,4 @@ ram_rd_control ram_rd_control_7(
     );
                                 
 endmodule
+

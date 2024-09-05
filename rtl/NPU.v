@@ -196,13 +196,13 @@ npu_controller npu_controller(
     );   
     
     
-pe_control pe_control_data(
+pe_control_data pe_control_data(
     .clk                                (clk                       ),
     .rst_n                              (rst_n                     ),
-    .wr_sop                             (wr_sop_weight                    ),
-    .wr_eop                             (wr_eop_weight                    ),
-    .wr_vld                             (wr_vld_weight                    ),
-    .wr_data                            (wr_data_weight                   ),
+    .wr_sop                             (wr_sop_data                    ),
+    .wr_eop                             (wr_eop_data                    ),
+    .wr_vld                             (wr_vld_data                    ),
+    .wr_data                            (wr_data_data                   ),
     .rd_sop                             (pe_rd_sop_0                    ),
     
     //pe_data
@@ -216,13 +216,13 @@ pe_control pe_control_data(
     .pe_data_7                          (i_pe_array_map7                 )
 );
 
-pe_control pe_control_weight(
+pe_control_weight pe_control_weight(
     .clk                                (clk                       ),
     .rst_n                              (rst_n                     ),
-    .wr_sop                             (wr_sop_data                    ),
-    .wr_eop                             (wr_eop_data                    ),
-    .wr_vld                             (wr_vld_data                    ),
-    .wr_data                            (wr_data_data                   ),
+    .wr_sop                             (wr_sop_weight                    ),
+    .wr_eop                             (wr_eop_weight                    ),
+    .wr_vld                             (wr_vld_weight                    ),
+    .wr_data                            (wr_data_weight                   ),
     .rd_sop                             (pe_rd_sop_1                    ),
     
     //pe_data
