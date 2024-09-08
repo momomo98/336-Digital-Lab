@@ -17,7 +17,7 @@ class npu_env extends uvm_env;
 		npu_vir_sqr = npu_virtual_sequencer::type_id::create("npu_vir_sqr", this);
 		mst_agt = npu_master_agent::type_id::create("mst_agt", this);
 		slv_agt = npu_slave_agent::type_id::create("slv_agt", this);
-		cgm = npu_cov::type_id::create("cgm", this);;
+		cgm = npu_cov::type_id::create("cgm", this);
 	endfunction
 
 	function void connect_phase(uvm_phase phase);
