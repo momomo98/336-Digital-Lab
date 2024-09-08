@@ -1,0 +1,91 @@
+<session version="1.1" release="O-2018.09-SP2-1" timestp="2024-09-08 04:37:46 GMT">
+  <info>
+    <attr name="datetime" value="Sun Sep  8 12:37:50 2024
+"/>
+    <attr name="command" value="urg -full64 -format both -dir cov/npu_random_test.vdb"/>
+    <attr name="top_instance" value="npu_tb"/>
+  </info>
+  <hvp>
+    <datadef>
+      <metdef name="Line" type="ratio" aggregator="average" builtin="1" />
+      <metdef name="Cond" type="ratio" aggregator="average" builtin="1" />
+      <metdef name="Toggle" type="ratio" aggregator="average" builtin="1" />
+      <metdef name="FSM" type="ratio" aggregator="average" builtin="1" />
+      <metdef name="Branch" type="ratio" aggregator="average" builtin="1" />
+      <metdef name="Group" type="percent" aggregator="average" builtin="1" />
+    </datadef>
+  </hvp>
+  <old_coverage>
+  <scope type="top" name="top">
+    <metric name="Line" value="3484/3615" />
+    <metric name="Cond" value="406/577" />
+    <metric name="Toggle" value="42440/49046" />
+    <metric name="FSM" value="3/8" />
+    <metric name="Branch" value="1855/1987" />
+    <metric name="Group" value="100%" />
+  </scope>
+  <scope type="instance" name="top">
+  </scope>
+  <scope type="group" name="top">
+    <scope type="group" name="npu_pkg::npu_cov::dual_port_ram_rst_cg">
+      <metric name="Group" value="100%" />
+    </scope>
+    <scope type="group" name="npu_pkg::npu_cov::ram_rd_control_cg">
+      <metric name="Group" value="100%" />
+    </scope>
+    <scope type="group" name="npu_pkg::npu_cov::ram7_wr_control_weight_cg">
+      <metric name="Group" value="100%" />
+    </scope>
+    <scope type="group" name="npu_pkg::npu_cov::ram6_wr_control_weight_cg">
+      <metric name="Group" value="100%" />
+    </scope>
+    <scope type="group" name="npu_pkg::npu_cov::ram5_wr_control_weight_cg">
+      <metric name="Group" value="100%" />
+    </scope>
+    <scope type="group" name="npu_pkg::npu_cov::ram4_wr_control_weight_cg">
+      <metric name="Group" value="100%" />
+    </scope>
+    <scope type="group" name="npu_pkg::npu_cov::ram3_wr_control_weight_cg">
+      <metric name="Group" value="100%" />
+    </scope>
+    <scope type="group" name="npu_pkg::npu_cov::ram2_wr_control_weight_cg">
+      <metric name="Group" value="100%" />
+    </scope>
+    <scope type="group" name="npu_pkg::npu_cov::ram1_wr_control_weight_cg">
+      <metric name="Group" value="100%" />
+    </scope>
+    <scope type="group" name="npu_pkg::npu_cov::ram0_wr_control_weight_cg">
+      <metric name="Group" value="100%" />
+    </scope>
+    <scope type="group" name="npu_pkg::npu_cov::ram7_wr_control_data_cg">
+      <metric name="Group" value="100%" />
+    </scope>
+    <scope type="group" name="npu_pkg::npu_cov::ram6_wr_control_data_cg">
+      <metric name="Group" value="100%" />
+    </scope>
+    <scope type="group" name="npu_pkg::npu_cov::ram5_wr_control_data_cg">
+      <metric name="Group" value="100%" />
+    </scope>
+    <scope type="group" name="npu_pkg::npu_cov::ram4_wr_control_data_cg">
+      <metric name="Group" value="100%" />
+    </scope>
+    <scope type="group" name="npu_pkg::npu_cov::ram3_wr_control_data_cg">
+      <metric name="Group" value="100%" />
+    </scope>
+    <scope type="group" name="npu_pkg::npu_cov::ram2_wr_control_data_cg">
+      <metric name="Group" value="100%" />
+    </scope>
+    <scope type="group" name="npu_pkg::npu_cov::ram1_wr_control_data_cg">
+      <metric name="Group" value="100%" />
+    </scope>
+    <scope type="group" name="npu_pkg::npu_cov::ram0_wr_control_data_cg">
+      <metric name="Group" value="100%" />
+    </scope>
+    <scope type="group" name="npu_pkg::npu_cov::pe_clear_cg">
+      <metric name="Group" value="100%" />
+    </scope>
+  </scope>
+  <scope type="assert" name="Statistics">
+  </scope>
+  </old_coverage>
+</session>

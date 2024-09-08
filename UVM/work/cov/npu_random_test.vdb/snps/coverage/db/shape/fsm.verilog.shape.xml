@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE cov SYSTEM "ucdb_fsm.dtd">
+  <fsm count="0"  noconst="0"  >
+    <ucapi_version  major_ver="13"  minor_ver="1"  patch_str="O-2018.09-SP2-1"  />
+      <fsmdef file="153"  name="npu_controller"  lib=""  parameterized="1"  >
+        <fsmshape >
+          <fsmfsm name="curr_state"  id="0"  width="5"  line="159"  chksum="1471184375"  >
+            <state name="S_EXEC"  value="parameterized"  id="0"  flag="L"  line="173"  />
+            <state name="S_IDLE"  value="parameterized"  id="1"  flag="L"  line="159"  />
+            <state name="S_OVER"  value="parameterized"  id="2"  flag="L"  line="191"  />
+            <state name="S_SAVE"  value="parameterized"  id="3"  flag="L"  line="180"  />
+            <state name="S_WAIT"  value="parameterized"  id="4"  flag="L"  line="186"  />
+
+            <transition fromid="0"  toid="1"  flag="L"  line="159"  />
+            <transition fromid="0"  toid="3"  flag="L"  line="180"  />
+            
+            <transition fromid="1"  toid="0"  flag="L"  line="173"  />
+            
+            <transition fromid="2"  toid="1"  flag="L"  line="159"  />
+            
+            <transition fromid="3"  toid="1"  flag="L"  line="159"  />
+            <transition fromid="3"  toid="4"  flag="L"  line="186"  />
+            
+            <transition fromid="4"  toid="1"  flag="L"  line="159"  />
+            <transition fromid="4"  toid="2"  flag="L"  line="191"  />
+            
+          </fsmfsm>
+        </fsmshape>
+        <fsminst name="npu_tb.u_NPU.npu_controller"  />
+      </fsmdef>
+          <metric_sig chksum="65346B85311F2B356F944DB142EE5F5060E09C14"  />
+    </fsm>

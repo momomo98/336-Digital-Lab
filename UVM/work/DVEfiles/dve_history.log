@@ -1,0 +1,78 @@
+# Preference setting overrides
+gui_create_pref_key -category {Globals} -key {load_detail_for_funcov} -value_type {bool} -value {false}
+
+# State setting overrides
+gui_state_default_create -off -ini
+gui_set_state_value -category Globals -key recent_databases -value {{gui_open_db -file /opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/zzp/pool_uvm/sim/run/vcdplus.vpd -design V1} {gui_open_db -file /opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/zzp/uvm-adder-master/sim/run/vcdplus.vpd -design V1}}
+gui_set_state_value -category Layout -key child_assertion_size_x -value 1717
+gui_set_state_value -category Layout -key child_assertion_size_y -value 199
+gui_set_state_value -category Layout -key child_console_size_x -value 1717
+gui_set_state_value -category Layout -key child_console_size_y -value 256
+gui_set_state_value -category Layout -key child_data_coltype -value 84
+gui_set_state_value -category Layout -key child_data_colvalue -value 137
+gui_set_state_value -category Layout -key child_data_colvariable -value 164
+gui_set_state_value -category Layout -key child_data_size_x -value 307
+gui_set_state_value -category Layout -key child_data_size_y -value 467
+gui_set_state_value -category Layout -key child_driver_size_x -value 1445
+gui_set_state_value -category Layout -key child_driver_size_y -value 215
+gui_set_state_value -category Layout -key child_hier_col3 -value {-1}
+gui_set_state_value -category Layout -key child_hier_colhier -value 235
+gui_set_state_value -category Layout -key child_hier_colpd -value 0
+gui_set_state_value -category Layout -key child_hier_coltype -value 195
+gui_set_state_value -category Layout -key child_hier_size_x -value 316
+gui_set_state_value -category Layout -key child_hier_size_y -value 467
+gui_set_state_value -category Layout -key child_source_docknewline -value false
+gui_set_state_value -category Layout -key child_source_pos_x -value {-2}
+gui_set_state_value -category Layout -key child_source_pos_y -value {-15}
+gui_set_state_value -category Layout -key child_source_size_x -value 1097
+gui_set_state_value -category Layout -key child_source_size_y -value 462
+gui_set_state_value -category Layout -key child_wave_colname -value 247
+gui_set_state_value -category Layout -key child_wave_colvalue -value 247
+gui_set_state_value -category Layout -key child_wave_left -value 498
+gui_set_state_value -category Layout -key child_wave_pos_x -value {-2}
+gui_set_state_value -category Layout -key child_wave_pos_y -value {-15}
+gui_set_state_value -category Layout -key child_wave_right -value 1214
+gui_set_state_value -category Layout -key child_wave_size_x -value 1722
+gui_set_state_value -category Layout -key child_wave_size_y -value 477
+gui_set_state_value -category Layout -key main_pos_x -value 1
+gui_set_state_value -category Layout -key main_pos_y -value 38
+gui_set_state_value -category Layout -key main_size_x -value 1718
+gui_set_state_value -category Layout -key main_size_y -value 860
+gui_set_state_value -category Layout -key stand_source_child_docknewline -value false
+gui_set_state_value -category Layout -key stand_source_child_pos_x -value {-2}
+gui_set_state_value -category Layout -key stand_source_child_pos_y -value {-15}
+gui_set_state_value -category Layout -key stand_source_child_size_x -value 921
+gui_set_state_value -category Layout -key stand_source_child_size_y -value 487
+gui_set_state_value -category Layout -key stand_wave_child_docknewline -value false
+gui_set_state_value -category Layout -key stand_wave_child_pos_x -value {-2}
+gui_set_state_value -category Layout -key stand_wave_child_pos_y -value {-15}
+gui_set_state_value -category Layout -key stand_wave_child_size_x -value 1722
+gui_set_state_value -category Layout -key stand_wave_child_size_y -value 718
+gui_set_state_value -category Layout -key stand_wave_top_pos_x -value 1
+gui_set_state_value -category Layout -key stand_wave_top_pos_y -value 66
+gui_set_state_value -category Layout -key stand_wave_top_size_x -value 1718
+gui_set_state_value -category Layout -key stand_wave_top_size_y -value 888
+gui_set_state_value -category Assertion -key show_assertion_type -value all
+gui_set_state_value -category Driver -key driver_add_to_wave -value true
+gui_create_state_key -category FindDialog -key m_pMatchCase -value_type bool -value false
+gui_create_state_key -category FindDialog -key m_pMatchWord -value_type bool -value false
+gui_create_state_key -category FindDialog -key m_pUseCombo -value_type string -value {}
+gui_create_state_key -category FindDialog -key m_pWrapAround -value_type bool -value true
+gui_state_default_create -off
+
+# Begin command logging
+gui_set_pref_value -category {Globals} -key {smart_resize} -value {false}
+gui_set_pref_value -category {Globals} -key {smart_resize} -value {true}
+gui_sim_run Ucli -exe ./simv -args {-ucligui  +UVM_VERBOSITY=UVM_LOW -a vcs.log +UVM_TESTNAME=npu_random_test +ntb_random_seed=1 -cm line+cond+fsm+branch+tgl -cm_dir ./cov/npu_random_test.vdb -cm_name simv +sva_success} -dir .
+gui_list_expand -id  Hier.1   npu_tb
+gui_list_expand -id  Hier.1   npu_tb.u_NPU
+gui_list_select -id Hier.1 -current_item_name npu_tb.u_NPU.npu_controller -current_item_type Scope  -selected  { npu_tb.u_NPU.npu_controller   }
+gui_list_action -id  Hier.1 npu_tb.u_NPU.npu_controller
+gui_list_select -id Data.1 -selected  { npu_tb.u_NPU.npu_controller.rd_sop_0   }
+gui_list_select_all -id Data.1
+gui_open_window Wave
+gui_list_add -id Wave.1 -from Data.1 { npu_tb.u_NPU.npu_controller.clk npu_tb.u_NPU.npu_controller.rst_n npu_tb.u_NPU.npu_controller.wr_eop_data npu_tb.u_NPU.npu_controller.wr_eop_weight npu_tb.u_NPU.npu_controller.clear npu_tb.u_NPU.npu_controller.rd_sop_0 npu_tb.u_NPU.npu_controller.rd_sop_1 {npu_tb.u_NPU.npu_controller.rd_eop[7:0]} npu_tb.u_NPU.npu_controller.save_finish npu_tb.u_NPU.npu_controller.save_sop {npu_tb.u_NPU.npu_controller.curr_state[4:0]} {npu_tb.u_NPU.npu_controller.next_state[4:0]} {npu_tb.u_NPU.npu_controller.wr_eop_data_cnt[1:0]} {npu_tb.u_NPU.npu_controller.wr_eop_weight_cnt[0:0]} {npu_tb.u_NPU.npu_controller.pe_compute_cnt[4:0]} {npu_tb.u_NPU.npu_controller.rd_finish[7:0]} npu_tb.u_NPU.npu_controller.load_finish {npu_tb.u_NPU.npu_controller.S_IDLE[4:0]} {npu_tb.u_NPU.npu_controller.S_EXEC[4:0]} {npu_tb.u_NPU.npu_controller.S_SAVE[4:0]} {npu_tb.u_NPU.npu_controller.S_WAIT[4:0]} {npu_tb.u_NPU.npu_controller.S_OVER[4:0]} {npu_tb.u_NPU.npu_controller.$unit} } -insertionbar
+run
+gui_zoom -window Wave.1 -full
+gui_list_select -id Wave.1 -selected  { npu_tb.u_NPU.npu_controller.clear   }
+gui_close_window -window TopLevel.2

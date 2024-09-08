@@ -1,0 +1,2100 @@
+Group : npu_pkg::npu_cov::dual_port_ram_rst_cg
+
+===============================================================================
+Group : npu_pkg::npu_cov::dual_port_ram_rst_cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+100.00 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/zzp/NPU/tb/cov/npu_cov.sv
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   npu_pkg::npu_cov::dual_port_ram_rst_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 1        0         1       100.00  
+
+
+Variables for Group  npu_pkg::npu_cov::dual_port_ram_rst_cg
+
+
+VARIABLE EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+ARR_RST  1        0         1       100.00  100  1      16       0                    
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable ARR_RST
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 1        0         1       100.00  
+
+
+User Defined Bins for ARR_RST
+
+
+Bins
+
+NAME COUNT AT LEAST 
+data 32    16       
+
+
+Group : npu_pkg::npu_cov::ram_rd_control_cg
+
+===============================================================================
+Group : npu_pkg::npu_cov::ram_rd_control_cg
+===============================================================================
+SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING 
+100.00 100.00    1      100    1        1            64           64            
+
+
+Source File(s) : 
+
+/opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/zzp/NPU/tb/cov/npu_cov.sv
+
+1 Instances:
+
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING NAME              
+100.00 1      100    1        64           64            ram_rd_control_cg 
+
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   npu_pkg::npu_cov::ram_rd_control_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 16       0         16      100.00  
+
+
+Variables for Group  npu_pkg::npu_cov::ram_rd_control_cg
+
+
+VARIABLE EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+ADDR     16       0         16      100.00  100  1      1        0                    
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable ADDR
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 16       0         16      100.00  
+
+
+User Defined Bins for ADDR
+
+
+Bins
+
+NAME   COUNT AT LEAST 
+addr_0 274   1        
+addr_1 1     1        
+addr_2 1     1        
+addr_3 1     1        
+addr_4 1     1        
+addr_5 1     1        
+addr_6 1     1        
+addr_7 1     1        
+addr_8 1     1        
+addr_9 1     1        
+addr_a 1     1        
+addr_b 1     1        
+addr_c 1     1        
+addr_d 1     1        
+addr_e 1     1        
+addr_f 1     1        
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Group Instance : ram_rd_control_cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+100.00 1      100    1        64           64            
+
+
+Group:
+
+SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING COMMENT NAME                                
+100.00 100.00    1      100    1        1            64           64                    npu_pkg::npu_cov::ram_rd_control_cg 
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group Instance   ram_rd_control_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 16       0         16      100.00  
+
+
+Variables for Group Instance  ram_rd_control_cg
+
+
+VARIABLE EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+ADDR     16       0         16      100.00  100  1      1        0                    
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable ADDR
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 16       0         16      100.00  
+
+
+User Defined Bins for ADDR
+
+
+Bins
+
+NAME   COUNT AT LEAST 
+addr_0 274   1        
+addr_1 1     1        
+addr_2 1     1        
+addr_3 1     1        
+addr_4 1     1        
+addr_5 1     1        
+addr_6 1     1        
+addr_7 1     1        
+addr_8 1     1        
+addr_9 1     1        
+addr_a 1     1        
+addr_b 1     1        
+addr_c 1     1        
+addr_d 1     1        
+addr_e 1     1        
+addr_f 1     1        
+
+
+Group : npu_pkg::npu_cov::ram7_wr_control_weight_cg
+
+===============================================================================
+Group : npu_pkg::npu_cov::ram7_wr_control_weight_cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+100.00 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/zzp/NPU/tb/cov/npu_cov.sv
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   npu_pkg::npu_cov::ram7_wr_control_weight_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 7        0         7       100.00  
+Crosses   5        0         5       100.00  
+
+
+Variables for Group  npu_pkg::npu_cov::ram7_wr_control_weight_cg
+
+
+VARIABLE EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+ADDR     5        0         5       100.00  100  1      1        0                    
+STRB     2        0         2       100.00  100  1      1        0                    
+
+
+Crosses for Group  npu_pkg::npu_cov::ram7_wr_control_weight_cg
+
+
+CROSS EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+CROS  5        0         5       100.00  100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable ADDR
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 5        0         5       100.00  
+
+
+User Defined Bins for ADDR
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+addr4 1     1        
+addr3 1     1        
+addr2 1     1        
+addr1 1     1        
+addr0 1     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable STRB
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for STRB
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+strb1 4     1        
+strb0 1     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross CROS
+
+
+Samples crossed: ADDR STRB
+CATEGORY                EXPECTED UNCOVERED COVERED PERCENT MISSING 
+User Defined Cross Bins 5        0         5       100.00          
+
+
+User Defined Cross Bins for CROS
+
+
+Excluded/Illegal bins
+
+NAME COUNT STATUS   
+ig0  0     Excluded 
+ig1  0     Excluded 
+ig2  0     Excluded 
+ig3  0     Excluded 
+ig4  0     Excluded 
+
+
+Covered bins
+
+NAME   COUNT AT LEAST 
+cross0 1     1        
+cross1 1     1        
+cross2 1     1        
+cross3 1     1        
+cross4 1     1        
+
+
+Group : npu_pkg::npu_cov::ram6_wr_control_weight_cg
+
+===============================================================================
+Group : npu_pkg::npu_cov::ram6_wr_control_weight_cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+100.00 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/zzp/NPU/tb/cov/npu_cov.sv
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   npu_pkg::npu_cov::ram6_wr_control_weight_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 7        0         7       100.00  
+Crosses   5        0         5       100.00  
+
+
+Variables for Group  npu_pkg::npu_cov::ram6_wr_control_weight_cg
+
+
+VARIABLE EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+ADDR     5        0         5       100.00  100  1      1        0                    
+STRB     2        0         2       100.00  100  1      1        0                    
+
+
+Crosses for Group  npu_pkg::npu_cov::ram6_wr_control_weight_cg
+
+
+CROSS EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+CROS  5        0         5       100.00  100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable ADDR
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 5        0         5       100.00  
+
+
+User Defined Bins for ADDR
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+addr4 1     1        
+addr3 1     1        
+addr2 1     1        
+addr1 1     1        
+addr0 1     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable STRB
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for STRB
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+strb1 1     1        
+strb0 4     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross CROS
+
+
+Samples crossed: ADDR STRB
+CATEGORY                EXPECTED UNCOVERED COVERED PERCENT MISSING 
+User Defined Cross Bins 5        0         5       100.00          
+
+
+User Defined Cross Bins for CROS
+
+
+Excluded/Illegal bins
+
+NAME COUNT STATUS   
+ig0  0     Excluded 
+ig1  0     Excluded 
+ig2  0     Excluded 
+ig3  0     Excluded 
+ig4  0     Excluded 
+
+
+Covered bins
+
+NAME   COUNT AT LEAST 
+cross0 1     1        
+cross1 1     1        
+cross2 1     1        
+cross3 1     1        
+cross4 1     1        
+
+
+Group : npu_pkg::npu_cov::ram5_wr_control_weight_cg
+
+===============================================================================
+Group : npu_pkg::npu_cov::ram5_wr_control_weight_cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+100.00 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/zzp/NPU/tb/cov/npu_cov.sv
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   npu_pkg::npu_cov::ram5_wr_control_weight_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 7        0         7       100.00  
+Crosses   5        0         5       100.00  
+
+
+Variables for Group  npu_pkg::npu_cov::ram5_wr_control_weight_cg
+
+
+VARIABLE EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+ADDR     5        0         5       100.00  100  1      1        0                    
+STRB     2        0         2       100.00  100  1      1        0                    
+
+
+Crosses for Group  npu_pkg::npu_cov::ram5_wr_control_weight_cg
+
+
+CROSS EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+CROS  5        0         5       100.00  100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable ADDR
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 5        0         5       100.00  
+
+
+User Defined Bins for ADDR
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+addr4 1     1        
+addr3 1     1        
+addr2 1     1        
+addr1 1     1        
+addr0 1     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable STRB
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for STRB
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+strb1 4     1        
+strb0 1     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross CROS
+
+
+Samples crossed: ADDR STRB
+CATEGORY                EXPECTED UNCOVERED COVERED PERCENT MISSING 
+User Defined Cross Bins 5        0         5       100.00          
+
+
+User Defined Cross Bins for CROS
+
+
+Excluded/Illegal bins
+
+NAME COUNT STATUS   
+ig0  0     Excluded 
+ig1  0     Excluded 
+ig2  0     Excluded 
+ig3  0     Excluded 
+ig4  0     Excluded 
+
+
+Covered bins
+
+NAME   COUNT AT LEAST 
+cross0 1     1        
+cross1 1     1        
+cross2 1     1        
+cross3 1     1        
+cross4 1     1        
+
+
+Group : npu_pkg::npu_cov::ram4_wr_control_weight_cg
+
+===============================================================================
+Group : npu_pkg::npu_cov::ram4_wr_control_weight_cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+100.00 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/zzp/NPU/tb/cov/npu_cov.sv
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   npu_pkg::npu_cov::ram4_wr_control_weight_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 7        0         7       100.00  
+Crosses   5        0         5       100.00  
+
+
+Variables for Group  npu_pkg::npu_cov::ram4_wr_control_weight_cg
+
+
+VARIABLE EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+ADDR     5        0         5       100.00  100  1      1        0                    
+STRB     2        0         2       100.00  100  1      1        0                    
+
+
+Crosses for Group  npu_pkg::npu_cov::ram4_wr_control_weight_cg
+
+
+CROSS EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+CROS  5        0         5       100.00  100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable ADDR
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 5        0         5       100.00  
+
+
+User Defined Bins for ADDR
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+addr4 1     1        
+addr3 1     1        
+addr2 1     1        
+addr1 1     1        
+addr0 1     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable STRB
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for STRB
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+strb1 1     1        
+strb0 4     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross CROS
+
+
+Samples crossed: ADDR STRB
+CATEGORY                EXPECTED UNCOVERED COVERED PERCENT MISSING 
+User Defined Cross Bins 5        0         5       100.00          
+
+
+User Defined Cross Bins for CROS
+
+
+Excluded/Illegal bins
+
+NAME COUNT STATUS   
+ig0  0     Excluded 
+ig1  0     Excluded 
+ig2  0     Excluded 
+ig3  0     Excluded 
+ig4  0     Excluded 
+
+
+Covered bins
+
+NAME   COUNT AT LEAST 
+cross0 1     1        
+cross1 1     1        
+cross2 1     1        
+cross3 1     1        
+cross4 1     1        
+
+
+Group : npu_pkg::npu_cov::ram3_wr_control_weight_cg
+
+===============================================================================
+Group : npu_pkg::npu_cov::ram3_wr_control_weight_cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+100.00 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/zzp/NPU/tb/cov/npu_cov.sv
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   npu_pkg::npu_cov::ram3_wr_control_weight_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 7        0         7       100.00  
+Crosses   5        0         5       100.00  
+
+
+Variables for Group  npu_pkg::npu_cov::ram3_wr_control_weight_cg
+
+
+VARIABLE EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+ADDR     5        0         5       100.00  100  1      1        0                    
+STRB     2        0         2       100.00  100  1      1        0                    
+
+
+Crosses for Group  npu_pkg::npu_cov::ram3_wr_control_weight_cg
+
+
+CROSS EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+CROS  5        0         5       100.00  100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable ADDR
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 5        0         5       100.00  
+
+
+User Defined Bins for ADDR
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+addr4 1     1        
+addr3 1     1        
+addr2 1     1        
+addr1 1     1        
+addr0 1     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable STRB
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for STRB
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+strb1 4     1        
+strb0 1     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross CROS
+
+
+Samples crossed: ADDR STRB
+CATEGORY                EXPECTED UNCOVERED COVERED PERCENT MISSING 
+User Defined Cross Bins 5        0         5       100.00          
+
+
+User Defined Cross Bins for CROS
+
+
+Excluded/Illegal bins
+
+NAME COUNT STATUS   
+ig0  0     Excluded 
+ig1  0     Excluded 
+ig2  0     Excluded 
+ig3  0     Excluded 
+ig4  0     Excluded 
+
+
+Covered bins
+
+NAME   COUNT AT LEAST 
+cross0 1     1        
+cross1 1     1        
+cross2 1     1        
+cross3 1     1        
+cross4 1     1        
+
+
+Group : npu_pkg::npu_cov::ram2_wr_control_weight_cg
+
+===============================================================================
+Group : npu_pkg::npu_cov::ram2_wr_control_weight_cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+100.00 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/zzp/NPU/tb/cov/npu_cov.sv
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   npu_pkg::npu_cov::ram2_wr_control_weight_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 7        0         7       100.00  
+Crosses   5        0         5       100.00  
+
+
+Variables for Group  npu_pkg::npu_cov::ram2_wr_control_weight_cg
+
+
+VARIABLE EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+ADDR     5        0         5       100.00  100  1      1        0                    
+STRB     2        0         2       100.00  100  1      1        0                    
+
+
+Crosses for Group  npu_pkg::npu_cov::ram2_wr_control_weight_cg
+
+
+CROSS EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+CROS  5        0         5       100.00  100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable ADDR
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 5        0         5       100.00  
+
+
+User Defined Bins for ADDR
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+addr4 1     1        
+addr3 1     1        
+addr2 1     1        
+addr1 1     1        
+addr0 1     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable STRB
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for STRB
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+strb1 1     1        
+strb0 4     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross CROS
+
+
+Samples crossed: ADDR STRB
+CATEGORY                EXPECTED UNCOVERED COVERED PERCENT MISSING 
+User Defined Cross Bins 5        0         5       100.00          
+
+
+User Defined Cross Bins for CROS
+
+
+Excluded/Illegal bins
+
+NAME COUNT STATUS   
+ig0  0     Excluded 
+ig1  0     Excluded 
+ig2  0     Excluded 
+ig3  0     Excluded 
+ig4  0     Excluded 
+
+
+Covered bins
+
+NAME   COUNT AT LEAST 
+cross0 1     1        
+cross1 1     1        
+cross2 1     1        
+cross3 1     1        
+cross4 1     1        
+
+
+Group : npu_pkg::npu_cov::ram1_wr_control_weight_cg
+
+===============================================================================
+Group : npu_pkg::npu_cov::ram1_wr_control_weight_cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+100.00 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/zzp/NPU/tb/cov/npu_cov.sv
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   npu_pkg::npu_cov::ram1_wr_control_weight_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 7        0         7       100.00  
+Crosses   5        0         5       100.00  
+
+
+Variables for Group  npu_pkg::npu_cov::ram1_wr_control_weight_cg
+
+
+VARIABLE EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+ADDR     5        0         5       100.00  100  1      1        0                    
+STRB     2        0         2       100.00  100  1      1        0                    
+
+
+Crosses for Group  npu_pkg::npu_cov::ram1_wr_control_weight_cg
+
+
+CROSS EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+CROS  5        0         5       100.00  100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable ADDR
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 5        0         5       100.00  
+
+
+User Defined Bins for ADDR
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+addr4 1     1        
+addr3 1     1        
+addr2 1     1        
+addr1 1     1        
+addr0 1     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable STRB
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for STRB
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+strb1 4     1        
+strb0 1     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross CROS
+
+
+Samples crossed: ADDR STRB
+CATEGORY                EXPECTED UNCOVERED COVERED PERCENT MISSING 
+User Defined Cross Bins 5        0         5       100.00          
+
+
+User Defined Cross Bins for CROS
+
+
+Excluded/Illegal bins
+
+NAME COUNT STATUS   
+ig0  0     Excluded 
+ig1  0     Excluded 
+ig2  0     Excluded 
+ig3  0     Excluded 
+ig4  0     Excluded 
+
+
+Covered bins
+
+NAME   COUNT AT LEAST 
+cross0 1     1        
+cross1 1     1        
+cross2 1     1        
+cross3 1     1        
+cross4 1     1        
+
+
+Group : npu_pkg::npu_cov::ram0_wr_control_weight_cg
+
+===============================================================================
+Group : npu_pkg::npu_cov::ram0_wr_control_weight_cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+100.00 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/zzp/NPU/tb/cov/npu_cov.sv
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   npu_pkg::npu_cov::ram0_wr_control_weight_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 7        0         7       100.00  
+Crosses   5        0         5       100.00  
+
+
+Variables for Group  npu_pkg::npu_cov::ram0_wr_control_weight_cg
+
+
+VARIABLE EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+ADDR     5        0         5       100.00  100  1      1        0                    
+STRB     2        0         2       100.00  100  1      1        0                    
+
+
+Crosses for Group  npu_pkg::npu_cov::ram0_wr_control_weight_cg
+
+
+CROSS EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+CROS  5        0         5       100.00  100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable ADDR
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 5        0         5       100.00  
+
+
+User Defined Bins for ADDR
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+addr4 1     1        
+addr3 1     1        
+addr2 1     1        
+addr1 1     1        
+addr0 285   1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable STRB
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for STRB
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+strb1 1     1        
+strb0 4     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross CROS
+
+
+Samples crossed: ADDR STRB
+CATEGORY                EXPECTED UNCOVERED COVERED PERCENT MISSING 
+User Defined Cross Bins 5        0         5       100.00          
+
+
+User Defined Cross Bins for CROS
+
+
+Excluded/Illegal bins
+
+NAME COUNT STATUS   
+ig0  0     Excluded 
+ig1  0     Excluded 
+ig2  0     Excluded 
+ig3  0     Excluded 
+ig4  0     Excluded 
+
+
+Covered bins
+
+NAME   COUNT AT LEAST 
+cross0 1     1        
+cross1 1     1        
+cross2 1     1        
+cross3 1     1        
+cross4 1     1        
+
+
+Group : npu_pkg::npu_cov::ram7_wr_control_data_cg
+
+===============================================================================
+Group : npu_pkg::npu_cov::ram7_wr_control_data_cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+100.00 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/zzp/NPU/tb/cov/npu_cov.sv
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   npu_pkg::npu_cov::ram7_wr_control_data_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 8        0         8       100.00  
+Crosses   6        0         6       100.00  
+
+
+Variables for Group  npu_pkg::npu_cov::ram7_wr_control_data_cg
+
+
+VARIABLE EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+ADDR     6        0         6       100.00  100  1      1        0                    
+STRB     2        0         2       100.00  100  1      1        0                    
+
+
+Crosses for Group  npu_pkg::npu_cov::ram7_wr_control_data_cg
+
+
+CROSS EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+CROS  6        0         6       100.00  100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable ADDR
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 6        0         6       100.00  
+
+
+User Defined Bins for ADDR
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+addr5 1     1        
+addr4 1     1        
+addr3 1     1        
+addr2 1     1        
+addr1 1     1        
+addr0 1     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable STRB
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for STRB
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+strb1 3     1        
+strb0 3     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross CROS
+
+
+Samples crossed: ADDR STRB
+CATEGORY                EXPECTED UNCOVERED COVERED PERCENT MISSING 
+User Defined Cross Bins 6        0         6       100.00          
+
+
+User Defined Cross Bins for CROS
+
+
+Excluded/Illegal bins
+
+NAME COUNT STATUS   
+ig0  0     Excluded 
+ig1  0     Excluded 
+ig2  0     Excluded 
+ig3  0     Excluded 
+ig4  0     Excluded 
+ig5  0     Excluded 
+
+
+Covered bins
+
+NAME   COUNT AT LEAST 
+cross0 1     1        
+cross1 1     1        
+cross2 1     1        
+cross3 1     1        
+cross4 1     1        
+cross5 1     1        
+
+
+Group : npu_pkg::npu_cov::ram6_wr_control_data_cg
+
+===============================================================================
+Group : npu_pkg::npu_cov::ram6_wr_control_data_cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+100.00 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/zzp/NPU/tb/cov/npu_cov.sv
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   npu_pkg::npu_cov::ram6_wr_control_data_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 8        0         8       100.00  
+Crosses   6        0         6       100.00  
+
+
+Variables for Group  npu_pkg::npu_cov::ram6_wr_control_data_cg
+
+
+VARIABLE EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+ADDR     6        0         6       100.00  100  1      1        0                    
+STRB     2        0         2       100.00  100  1      1        0                    
+
+
+Crosses for Group  npu_pkg::npu_cov::ram6_wr_control_data_cg
+
+
+CROSS EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+CROS  6        0         6       100.00  100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable ADDR
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 6        0         6       100.00  
+
+
+User Defined Bins for ADDR
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+addr5 1     1        
+addr4 1     1        
+addr3 1     1        
+addr2 1     1        
+addr1 1     1        
+addr0 1     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable STRB
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for STRB
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+strb1 3     1        
+strb0 3     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross CROS
+
+
+Samples crossed: ADDR STRB
+CATEGORY                EXPECTED UNCOVERED COVERED PERCENT MISSING 
+User Defined Cross Bins 6        0         6       100.00          
+
+
+User Defined Cross Bins for CROS
+
+
+Excluded/Illegal bins
+
+NAME COUNT STATUS   
+ig0  0     Excluded 
+ig1  0     Excluded 
+ig2  0     Excluded 
+ig3  0     Excluded 
+ig4  0     Excluded 
+ig5  0     Excluded 
+
+
+Covered bins
+
+NAME   COUNT AT LEAST 
+cross0 1     1        
+cross1 1     1        
+cross2 1     1        
+cross3 1     1        
+cross4 1     1        
+cross5 1     1        
+
+
+Group : npu_pkg::npu_cov::ram5_wr_control_data_cg
+
+===============================================================================
+Group : npu_pkg::npu_cov::ram5_wr_control_data_cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+100.00 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/zzp/NPU/tb/cov/npu_cov.sv
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   npu_pkg::npu_cov::ram5_wr_control_data_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 8        0         8       100.00  
+Crosses   6        0         6       100.00  
+
+
+Variables for Group  npu_pkg::npu_cov::ram5_wr_control_data_cg
+
+
+VARIABLE EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+ADDR     6        0         6       100.00  100  1      1        0                    
+STRB     2        0         2       100.00  100  1      1        0                    
+
+
+Crosses for Group  npu_pkg::npu_cov::ram5_wr_control_data_cg
+
+
+CROSS EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+CROS  6        0         6       100.00  100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable ADDR
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 6        0         6       100.00  
+
+
+User Defined Bins for ADDR
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+addr5 1     1        
+addr4 1     1        
+addr3 1     1        
+addr2 1     1        
+addr1 1     1        
+addr0 1     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable STRB
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for STRB
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+strb1 3     1        
+strb0 3     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross CROS
+
+
+Samples crossed: ADDR STRB
+CATEGORY                EXPECTED UNCOVERED COVERED PERCENT MISSING 
+User Defined Cross Bins 6        0         6       100.00          
+
+
+User Defined Cross Bins for CROS
+
+
+Excluded/Illegal bins
+
+NAME COUNT STATUS   
+ig0  0     Excluded 
+ig1  0     Excluded 
+ig2  0     Excluded 
+ig3  0     Excluded 
+ig4  0     Excluded 
+ig5  0     Excluded 
+
+
+Covered bins
+
+NAME   COUNT AT LEAST 
+cross0 1     1        
+cross1 1     1        
+cross2 1     1        
+cross3 1     1        
+cross4 1     1        
+cross5 1     1        
+
+
+Group : npu_pkg::npu_cov::ram4_wr_control_data_cg
+
+===============================================================================
+Group : npu_pkg::npu_cov::ram4_wr_control_data_cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+100.00 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/zzp/NPU/tb/cov/npu_cov.sv
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   npu_pkg::npu_cov::ram4_wr_control_data_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 8        0         8       100.00  
+Crosses   6        0         6       100.00  
+
+
+Variables for Group  npu_pkg::npu_cov::ram4_wr_control_data_cg
+
+
+VARIABLE EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+ADDR     6        0         6       100.00  100  1      1        0                    
+STRB     2        0         2       100.00  100  1      1        0                    
+
+
+Crosses for Group  npu_pkg::npu_cov::ram4_wr_control_data_cg
+
+
+CROSS EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+CROS  6        0         6       100.00  100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable ADDR
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 6        0         6       100.00  
+
+
+User Defined Bins for ADDR
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+addr5 1     1        
+addr4 1     1        
+addr3 1     1        
+addr2 1     1        
+addr1 1     1        
+addr0 1     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable STRB
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for STRB
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+strb1 3     1        
+strb0 3     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross CROS
+
+
+Samples crossed: ADDR STRB
+CATEGORY                EXPECTED UNCOVERED COVERED PERCENT MISSING 
+User Defined Cross Bins 6        0         6       100.00          
+
+
+User Defined Cross Bins for CROS
+
+
+Excluded/Illegal bins
+
+NAME COUNT STATUS   
+ig0  0     Excluded 
+ig1  0     Excluded 
+ig2  0     Excluded 
+ig3  0     Excluded 
+ig4  0     Excluded 
+ig5  0     Excluded 
+
+
+Covered bins
+
+NAME   COUNT AT LEAST 
+cross0 1     1        
+cross1 1     1        
+cross2 1     1        
+cross3 1     1        
+cross4 1     1        
+cross5 1     1        
+
+
+Group : npu_pkg::npu_cov::ram3_wr_control_data_cg
+
+===============================================================================
+Group : npu_pkg::npu_cov::ram3_wr_control_data_cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+100.00 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/zzp/NPU/tb/cov/npu_cov.sv
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   npu_pkg::npu_cov::ram3_wr_control_data_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 8        0         8       100.00  
+Crosses   6        0         6       100.00  
+
+
+Variables for Group  npu_pkg::npu_cov::ram3_wr_control_data_cg
+
+
+VARIABLE EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+ADDR     6        0         6       100.00  100  1      1        0                    
+STRB     2        0         2       100.00  100  1      1        0                    
+
+
+Crosses for Group  npu_pkg::npu_cov::ram3_wr_control_data_cg
+
+
+CROSS EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+CROS  6        0         6       100.00  100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable ADDR
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 6        0         6       100.00  
+
+
+User Defined Bins for ADDR
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+addr5 1     1        
+addr4 1     1        
+addr3 1     1        
+addr2 1     1        
+addr1 1     1        
+addr0 1     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable STRB
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for STRB
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+strb1 3     1        
+strb0 3     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross CROS
+
+
+Samples crossed: ADDR STRB
+CATEGORY                EXPECTED UNCOVERED COVERED PERCENT MISSING 
+User Defined Cross Bins 6        0         6       100.00          
+
+
+User Defined Cross Bins for CROS
+
+
+Excluded/Illegal bins
+
+NAME COUNT STATUS   
+ig0  0     Excluded 
+ig1  0     Excluded 
+ig2  0     Excluded 
+ig3  0     Excluded 
+ig4  0     Excluded 
+ig5  0     Excluded 
+
+
+Covered bins
+
+NAME   COUNT AT LEAST 
+cross0 1     1        
+cross1 1     1        
+cross2 1     1        
+cross3 1     1        
+cross4 1     1        
+cross5 1     1        
+
+
+Group : npu_pkg::npu_cov::ram2_wr_control_data_cg
+
+===============================================================================
+Group : npu_pkg::npu_cov::ram2_wr_control_data_cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+100.00 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/zzp/NPU/tb/cov/npu_cov.sv
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   npu_pkg::npu_cov::ram2_wr_control_data_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 8        0         8       100.00  
+Crosses   6        0         6       100.00  
+
+
+Variables for Group  npu_pkg::npu_cov::ram2_wr_control_data_cg
+
+
+VARIABLE EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+ADDR     6        0         6       100.00  100  1      1        0                    
+STRB     2        0         2       100.00  100  1      1        0                    
+
+
+Crosses for Group  npu_pkg::npu_cov::ram2_wr_control_data_cg
+
+
+CROSS EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+CROS  6        0         6       100.00  100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable ADDR
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 6        0         6       100.00  
+
+
+User Defined Bins for ADDR
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+addr5 1     1        
+addr4 1     1        
+addr3 1     1        
+addr2 1     1        
+addr1 1     1        
+addr0 1     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable STRB
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for STRB
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+strb1 3     1        
+strb0 3     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross CROS
+
+
+Samples crossed: ADDR STRB
+CATEGORY                EXPECTED UNCOVERED COVERED PERCENT MISSING 
+User Defined Cross Bins 6        0         6       100.00          
+
+
+User Defined Cross Bins for CROS
+
+
+Excluded/Illegal bins
+
+NAME COUNT STATUS   
+ig0  0     Excluded 
+ig1  0     Excluded 
+ig2  0     Excluded 
+ig3  0     Excluded 
+ig4  0     Excluded 
+ig5  0     Excluded 
+
+
+Covered bins
+
+NAME   COUNT AT LEAST 
+cross0 1     1        
+cross1 1     1        
+cross2 1     1        
+cross3 1     1        
+cross4 1     1        
+cross5 1     1        
+
+
+Group : npu_pkg::npu_cov::ram1_wr_control_data_cg
+
+===============================================================================
+Group : npu_pkg::npu_cov::ram1_wr_control_data_cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+100.00 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/zzp/NPU/tb/cov/npu_cov.sv
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   npu_pkg::npu_cov::ram1_wr_control_data_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 8        0         8       100.00  
+Crosses   6        0         6       100.00  
+
+
+Variables for Group  npu_pkg::npu_cov::ram1_wr_control_data_cg
+
+
+VARIABLE EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+ADDR     6        0         6       100.00  100  1      1        0                    
+STRB     2        0         2       100.00  100  1      1        0                    
+
+
+Crosses for Group  npu_pkg::npu_cov::ram1_wr_control_data_cg
+
+
+CROSS EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+CROS  6        0         6       100.00  100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable ADDR
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 6        0         6       100.00  
+
+
+User Defined Bins for ADDR
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+addr5 1     1        
+addr4 1     1        
+addr3 1     1        
+addr2 1     1        
+addr1 1     1        
+addr0 1     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable STRB
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for STRB
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+strb1 3     1        
+strb0 3     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross CROS
+
+
+Samples crossed: ADDR STRB
+CATEGORY                EXPECTED UNCOVERED COVERED PERCENT MISSING 
+User Defined Cross Bins 6        0         6       100.00          
+
+
+User Defined Cross Bins for CROS
+
+
+Excluded/Illegal bins
+
+NAME COUNT STATUS   
+ig0  0     Excluded 
+ig1  0     Excluded 
+ig2  0     Excluded 
+ig3  0     Excluded 
+ig4  0     Excluded 
+ig5  0     Excluded 
+
+
+Covered bins
+
+NAME   COUNT AT LEAST 
+cross0 1     1        
+cross1 1     1        
+cross2 1     1        
+cross3 1     1        
+cross4 1     1        
+cross5 1     1        
+
+
+Group : npu_pkg::npu_cov::ram0_wr_control_data_cg
+
+===============================================================================
+Group : npu_pkg::npu_cov::ram0_wr_control_data_cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+100.00 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/zzp/NPU/tb/cov/npu_cov.sv
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   npu_pkg::npu_cov::ram0_wr_control_data_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 8        0         8       100.00  
+Crosses   6        0         6       100.00  
+
+
+Variables for Group  npu_pkg::npu_cov::ram0_wr_control_data_cg
+
+
+VARIABLE EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+ADDR     6        0         6       100.00  100  1      1        0                    
+STRB     2        0         2       100.00  100  1      1        0                    
+
+
+Crosses for Group  npu_pkg::npu_cov::ram0_wr_control_data_cg
+
+
+CROSS EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+CROS  6        0         6       100.00  100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable ADDR
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 6        0         6       100.00  
+
+
+User Defined Bins for ADDR
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+addr5 1     1        
+addr4 1     1        
+addr3 1     1        
+addr2 1     1        
+addr1 1     1        
+addr0 284   1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable STRB
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for STRB
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+strb1 3     1        
+strb0 3     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross CROS
+
+
+Samples crossed: ADDR STRB
+CATEGORY                EXPECTED UNCOVERED COVERED PERCENT MISSING 
+User Defined Cross Bins 6        0         6       100.00          
+
+
+User Defined Cross Bins for CROS
+
+
+Excluded/Illegal bins
+
+NAME COUNT STATUS   
+ig0  0     Excluded 
+ig1  0     Excluded 
+ig2  0     Excluded 
+ig3  0     Excluded 
+ig4  0     Excluded 
+ig5  0     Excluded 
+
+
+Covered bins
+
+NAME   COUNT AT LEAST 
+cross0 1     1        
+cross1 1     1        
+cross2 1     1        
+cross3 1     1        
+cross4 1     1        
+cross5 1     1        
+
+
+Group : npu_pkg::npu_cov::pe_clear_cg
+
+===============================================================================
+Group : npu_pkg::npu_cov::pe_clear_cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+100.00 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/zzp/NPU/tb/cov/npu_cov.sv
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   npu_pkg::npu_cov::pe_clear_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 1        0         1       100.00  
+
+
+Variables for Group  npu_pkg::npu_cov::pe_clear_cg
+
+
+VARIABLE  EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+PE_RESULT 1        0         1       100.00  100  1      1        0                    
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable PE_RESULT
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 1        0         1       100.00  
+
+
+User Defined Bins for PE_RESULT
+
+
+Bins
+
+NAME COUNT AT LEAST 
+data 1     1        
+
+

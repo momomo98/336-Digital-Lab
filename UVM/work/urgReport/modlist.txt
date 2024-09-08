@@ -1,0 +1,30 @@
+Design Module List
+
+Total Module Definition Coverage Summary 
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 76.65  94.92  76.62  85.38  37.50  88.82 
+
+
+Total modules in report: 19
+-------------------------------------------------------------------------------
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME                            
+ 32.22 --     --      32.22 --     --     npu_interface                   
+ 51.70  73.33   0.00  85.62 --      47.83 result_ram                      
+ 68.64  95.38  66.67  53.41  37.50  90.24 npu_controller                  
+ 75.23 --     --      75.23 --     --     pe_result_cache                 
+ 77.79 --     --      77.79 --     --     NPU                             
+ 78.33 --     --      78.33 --     --     pe_control_data                 
+ 92.50 --     --      92.50 --     --     ram_rd_control_interface        
+ 94.12 100.00  80.00  96.46 --     100.00 ram_wr_control_weight           
+ 94.55  96.15 --     100.00 --      87.50 dual_port_ram                   
+ 95.11 100.00  81.25  99.20 --     100.00 ram_wr_control_data             
+ 96.31 100.00 --      88.94 --     100.00 pe_array                        
+ 96.99 --     --      96.99 --     --     pe_interface                    
+ 98.76 --     --      98.76 --     --     pe_control_weight               
+100.00 100.00 100.00 100.00 --     100.00 ram_rd_control                  
+100.00 --     --     100.00 --     --     ram_wr_control_data_interface   
+100.00 100.00 --     100.00 --     --     npu_tb                          
+100.00 --     --     100.00 --     --     dual_port_ram_mem               
+100.00 --     --     100.00 --     --     ram_wr_control_weight_interface 
+100.00 100.00 --     100.00 --     100.00 pe                              
+

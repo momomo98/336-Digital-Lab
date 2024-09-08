@@ -1,0 +1,30 @@
+Testbench Group List
+
+Total Groups Coverage Summary 
+SCORE  INST SCORE WEIGHT 
+100.00 100.00     1      
+
+
+Total groups in report: 19
+-------------------------------------------------------------------------------
+SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING COMMENT NAME                                        
+100.00 --        1      100    1        0            64           64                    npu_pkg::npu_cov::dual_port_ram_rst_cg      
+100.00 100.00    1      100    1        1            64           64                    npu_pkg::npu_cov::ram_rd_control_cg         
+100.00 --        1      100    1        0            64           64                    npu_pkg::npu_cov::ram7_wr_control_weight_cg 
+100.00 --        1      100    1        0            64           64                    npu_pkg::npu_cov::ram6_wr_control_weight_cg 
+100.00 --        1      100    1        0            64           64                    npu_pkg::npu_cov::ram5_wr_control_weight_cg 
+100.00 --        1      100    1        0            64           64                    npu_pkg::npu_cov::ram4_wr_control_weight_cg 
+100.00 --        1      100    1        0            64           64                    npu_pkg::npu_cov::ram3_wr_control_weight_cg 
+100.00 --        1      100    1        0            64           64                    npu_pkg::npu_cov::ram2_wr_control_weight_cg 
+100.00 --        1      100    1        0            64           64                    npu_pkg::npu_cov::ram1_wr_control_weight_cg 
+100.00 --        1      100    1        0            64           64                    npu_pkg::npu_cov::ram0_wr_control_weight_cg 
+100.00 --        1      100    1        0            64           64                    npu_pkg::npu_cov::ram7_wr_control_data_cg   
+100.00 --        1      100    1        0            64           64                    npu_pkg::npu_cov::ram6_wr_control_data_cg   
+100.00 --        1      100    1        0            64           64                    npu_pkg::npu_cov::ram5_wr_control_data_cg   
+100.00 --        1      100    1        0            64           64                    npu_pkg::npu_cov::ram4_wr_control_data_cg   
+100.00 --        1      100    1        0            64           64                    npu_pkg::npu_cov::ram3_wr_control_data_cg   
+100.00 --        1      100    1        0            64           64                    npu_pkg::npu_cov::ram2_wr_control_data_cg   
+100.00 --        1      100    1        0            64           64                    npu_pkg::npu_cov::ram1_wr_control_data_cg   
+100.00 --        1      100    1        0            64           64                    npu_pkg::npu_cov::ram0_wr_control_data_cg   
+100.00 --        1      100    1        0            64           64                    npu_pkg::npu_cov::pe_clear_cg               
+

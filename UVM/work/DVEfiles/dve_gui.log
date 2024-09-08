@@ -1,0 +1,70 @@
+Chronologic VCS simulator copyright 1991-2018
+Contains Synopsys proprietary information.
+Compiler version O-2018.09-SP2-1_Full64; Runtime version O-2018.09-SP2-1_Full64;  Sep  8 00:08 2024
+----------------------------------------------------------------
+UVM-1.1d.Synopsys
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+ VCS Coverage Metrics Release O-2018.09-SP2-1_Full64 Copyright (c) 1991-2018 by Synopsys Inc.
+VCD+ Writer O-2018.09-SP2-1_Full64 Copyright (c) 1991-2018 by Synopsys Inc.
+The design has assertions or cover properties.
+The assertion browser can be used to view them. Click on the assertion toolbar button or use the menu 'Window->Panes->Assertion' to open it.
+The file '/opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/zzp/NPU/work/inter.vpd' was opened successfully.
+dve> run
+UVM_INFO @ 0: reporter [RNTST] Running test npu_random_test...
+
+Note-[FCICIO] Instance coverage is ON
+/opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/zzp/NPU/tb/npu_cov.sv, 411
+$unit, "npu_cov::ram_rd_control_cg"
+  Instance coverage is set (option.per_instance = 1) for covergroup 
+  'npu_cov::ram_rd_control_cg'
+  
+  Covergroup Instance: npu_tb.me.obj.ram_rd_control_cg 
+  Design hierarchy: $unit
+
+UVM_INFO /opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/etc/uvm-1.1/src/base/uvm_phase.svh(1503) @ 0: reporter [PH/TRC/WAIT_PRED_OF_SUCC] Phase 'common.end_of_elaboration' (id=220) *** No pred to succ other than myself, so ending phase ***
+UVM_INFO /opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/etc/uvm-1.1/src/base/uvm_phase.svh(1503) @ 0: reporter [PH/TRC/WAIT_PRED_OF_SUCC] Phase 'common.start_of_simulation' (id=232) *** No pred to succ other than myself, so ending phase ***
+UVM_INFO /opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/etc/uvm-1.1/src/base/uvm_objection.svh(1273) @ 1895000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/etc/uvm-1.1/src/base/uvm_phase.svh(1503) @ 1895000: reporter [PH/TRC/WAIT_PRED_OF_SUCC] Phase 'common.extract' (id=251) *** No pred to succ other than myself, so ending phase ***
+UVM_INFO /opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/etc/uvm-1.1/src/base/uvm_phase.svh(1503) @ 1895000: reporter [PH/TRC/WAIT_PRED_OF_SUCC] Phase 'common.check' (id=263) *** No pred to succ other than myself, so ending phase ***
+UVM_INFO /opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/etc/uvm-1.1/src/base/uvm_phase.svh(1503) @ 1895000: reporter [PH/TRC/WAIT_PRED_OF_SUCC] Phase 'common.report' (id=275) *** No pred to succ other than myself, so ending phase ***
+UVM_INFO /opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/etc/uvm-1.1/src/base/uvm_phase.svh(1503) @ 1895000: reporter [PH/TRC/WAIT_PRED_OF_SUCC] Phase 'common.final' (id=287) *** No pred to succ other than myself, so ending phase ***
+
+--- UVM Report Summary ---
+
+Quit count :     0 of     1
+** Report counts by severity
+UVM_INFO :    8
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[PH/TRC/WAIT_PRED_OF_SUCC]     6
+[RNTST]     1
+[TEST_DONE]     1
+$finish called from file "/opt/eda/synopsys/vcs-mx/O-2018.09-SP2-1/etc/uvm-1.1/src/base/uvm_root.svh", line 439.
+$finish at simulation time              1895000
+Simulation complete, time is 1895000 ps.
+
+---------------------------------------------------------------------------
+VCS Coverage Metrics: during simulation line, cond, FSM, branch, tgl was monitored
+---------------------------------------------------------------------------
+
+ Coverage status: End of All Coverages ...
+
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 1895000 ps
+CPU Time:      0.560 seconds;       Data structure size:   0.9Mb
+Sun Sep  8 00:09:21 2024

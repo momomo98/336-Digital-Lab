@@ -1,0 +1,5 @@
+npu_tb.u_NPU.npu_controller.S_EXEC2
+npu_tb.u_NPU.npu_controller.S_IDLE1
+npu_tb.u_NPU.npu_controller.S_OVER10
+npu_tb.u_NPU.npu_controller.S_SAVE4
+npu_tb.u_NPU.npu_controller.S_WAIT8
