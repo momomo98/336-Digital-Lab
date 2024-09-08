@@ -106,8 +106,21 @@ interface npu_interface(input clk, input rstn);
 	    input   		    rd_data_5;
 	    input   		    rd_data_6;
 	    input   		    rd_data_7;
-		
 	endclocking
+
+	property npu_write_data_ast;
+		@(posedge clk)
+		wr_sop_data |=> wr_vld_data[=10] ##1 wr_eop_data;
+	endproperty
+	assert property(npu_write_data_ast) else `uvm_error("ASSERT", "npu_write_data_ast");
+	cover property(npu_write_data_ast);
+
+	property npu_write_weight_ast;
+		@(posedge clk)
+		wr_sop_weight |=> wr_vld_weight[=36] ##1 wr_eop_weight;
+	endproperty
+	assert property(npu_write_weight_ast) else `uvm_error("ASSERT", "npu_write_weight_ast");
+	cover property(npu_write_weight_ast);
 
 endinterface
 
@@ -152,11 +165,18 @@ interface ram_wr_control_data_interface(input clk, input rst_n);
     logic [3:0] ram_wr_addr;
     logic [31:0] ram_wr_data;  
 
-  clocking cb_mon @(posedge clk);
-    // USER: Add clocking block detail
-    default input #1ps output #1ps;
-    input wr_sop, wr_eop, wr_vld, wr_data, ram_wr_en, ram_wr_strb, ram_wr_addr, ram_wr_data;
-  endclocking : cb_mon
+  	clocking cb_mon @(posedge clk);
+		// USER: Add clocking block detail
+		default input #1ps output #1ps;
+		input wr_sop, wr_eop, wr_vld, wr_data, ram_wr_en, ram_wr_strb, ram_wr_addr, ram_wr_data;
+ 	endclocking : cb_mon
+
+	property ram_wr_control_data_ast;
+		@(posedge clk)
+		wr_sop |=> ##[0:9] (ram_wr_en[=6]);
+	endproperty
+	assert property(ram_wr_control_data_ast) else `uvm_error("ASSERT", "ram_wr_control_data_ast");
+	cover property(ram_wr_control_data_ast);
   
 endinterface
 
@@ -172,11 +192,18 @@ interface ram_wr_control_weight_interface(input clk, input rst_n);
     logic [3:0] ram_wr_addr;
     logic [31:0] ram_wr_data;   
 
-  clocking cb_mon @(posedge clk);
-    // USER: Add clocking block detail
-    default input #1ps output #1ps;
-    input wr_sop, wr_eop, wr_vld, wr_data, ram_wr_en, ram_wr_strb, ram_wr_addr, ram_wr_data;
-  endclocking : cb_mon
+  	clocking cb_mon @(posedge clk);
+		// USER: Add clocking block detail
+		default input #1ps output #1ps;
+		input wr_sop, wr_eop, wr_vld, wr_data, ram_wr_en, ram_wr_strb, ram_wr_addr, ram_wr_data;
+  	endclocking : cb_mon
+
+	property ram_wr_control_weight_ast;
+		@(posedge clk)
+		wr_sop |=> ##[0:9] (ram_wr_en[=5]);
+	endproperty
+	assert property(ram_wr_control_weight_ast) else `uvm_error("ASSERT", "ram_wr_control_weight_ast");
+	cover property(ram_wr_control_weight_ast);
   
 endinterface
 
@@ -191,10 +218,16 @@ interface ram_rd_control_interface(input clk, input rst_n);
     //pe_port
     logic [15:0] pe_data;
 
-  clocking cb_mon @(posedge clk);
-    // USER: Add clocking block detail
-    default input #1ps output #1ps;
-    input rd_sop, ram_rd_en, ram_raddr, ram_rdata, pe_data;
-  endclocking : cb_mon
+  	clocking cb_mon @(posedge clk);
+		// USER: Add clocking block detail
+		default input #1ps output #1ps;
+		input rd_sop, ram_rd_en, ram_raddr, ram_rdata, pe_data;
+  	endclocking : cb_mon
   
+	property ram_rd_control_ast;
+		@(posedge clk)
+		rd_sop |=> ##[0:3] (ram_rd_en[=8]);
+	endproperty
+	assert property(ram_rd_control_ast) else `uvm_error("ASSERT", "ram_rd_control_ast");
+	cover property(ram_rd_control_ast);
 endinterface

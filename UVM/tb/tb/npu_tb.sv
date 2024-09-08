@@ -210,8 +210,27 @@ module npu_tb();
         rst_n <= 1'b1;
     end
 
+    initial begin
+    fork
+      forever begin
+        wait(rst_n == 1'b0);
+        $assertoff();
+        wait(rst_n == 1'b1);
+        $asserton();
+      end
+    join_none
+    end
+
+    initial	begin
+        $fsdbDumpfile("simtop.fsdb");
+        $fsdbDumpvars;
+        $fsdbDumpSVA; // for assertion
+    end
+
     initial begin 
         uvm_config_db#(virtual npu_interface)::set(uvm_root::get(), "uvm_test_top.env.mst_agt.d_drv", "npu_vif", npu_vif);
+        uvm_config_db#(virtual npu_interface)::set(uvm_root::get(), "uvm_test_top.env.slv_agt.s_mon", "npu_vif", npu_vif);
+        uvm_config_db#(virtual npu_interface)::set(uvm_root::get(), "uvm_test_top.env.npu_vir_sqr", "npu_vif", npu_vif);
         
         uvm_config_db#(virtual pe_interface)::set(uvm_root::get(), "uvm_test_top.env.cgm", "pe_vif", pe_vif);
         uvm_config_db#(virtual dual_port_ram_mem)::set(uvm_root::get(), "uvm_test_top.env.cgm", "mem_vif", mem_vif);

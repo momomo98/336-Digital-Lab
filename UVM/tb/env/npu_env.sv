@@ -1,6 +1,7 @@
 class npu_env extends uvm_env;
 
 	npu_master_agent           mst_agt;
+	npu_slave_agent            slv_agt;
 	npu_virtual_sequencer      npu_vir_sqr;
 
 	npu_cov cgm;
@@ -15,6 +16,7 @@ class npu_env extends uvm_env;
 		super.build_phase(phase);
 		npu_vir_sqr = npu_virtual_sequencer::type_id::create("npu_vir_sqr", this);
 		mst_agt = npu_master_agent::type_id::create("mst_agt", this);
+		slv_agt = npu_slave_agent::type_id::create("slv_agt", this);
 		cgm = npu_cov::type_id::create("cgm", this);;
 	endfunction
 

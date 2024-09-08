@@ -6,4 +6,7 @@
 `include "npu_master_sequencer.sv"
 `include "npu_master_agent.sv"
 
+`include "npu_slave_monitor.sv"
+`include "npu_slave_agent.sv"
+
 `endif
