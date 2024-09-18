@@ -55,7 +55,7 @@ module AXI2NPU_interface(
     input  wire        [   3: 0]        acc_arcache                ,
     input  wire        [   2: 0]        acc_arprot                 ,
     input  wire                         acc_arvalid                ,
-    output wire                         acc_arready                , 
+    output reg                          acc_arready                , 
     //read data channel signals
     output wire        [   3: 0]        acc_rid                    ,
     output wire        [  31: 0]        acc_rdata                  ,
@@ -77,14 +77,14 @@ module AXI2NPU_interface(
     output reg        [  31: 0]        npu_wr_data_data            ,
     input wire                         npu_wr_err_data             ,
     //NPU read data channel
-    output reg                         npu_rd_sop_data,
-    input wire                         npu_rd_eop_data,
-    input wire                         npu_rd_vld_data,
-    input wire        [  31: 0]        npu_rd_data_data,
+    output reg                         npu_rd_sop_data             ,
+    input wire                         npu_rd_eop_data             ,
+    input wire                         npu_rd_vld_data             ,
+    input wire        [  31: 0]        npu_rd_data_data            ,
     input wire                         npu_rd_err
 );
 
-//support outstanding 8
+//write port support outstanding 8
 //awlen-reg fixed and no useful now
 reg [7:0] awlen_reg; 
 //awsize-reg fixed and no useful now
@@ -93,6 +93,14 @@ reg [2:0] awsize_reg;
 reg [2:0] awburst_reg; 
 //awport-reg 3'b100 is weight / 3'b000 is data
 reg [2:0] awport_reg;
+
+//read port not support outstanding
+//arlen-reg fixed
+reg [7:0] arlen_reg;
+//arsize-reg fixed and no useful now
+reg [2:0] arsize_reg; 
+//arburst-reg fixed to increment
+reg [2:0] arburst_reg; 
 
 //temp
 reg       npu_wr_eop_data_temp;
@@ -214,6 +222,38 @@ begin
         awport_reg <= awport_reg;
 end
 
+//arlen_reg - fixed value during all of the work time
+always@(posedge clk or negedge rst_n)
+begin
+    if(~rst_n)
+        arlen_reg <= 8'd0;
+    else if(acc_arvalid && acc_arready)
+        arlen_reg <= acc_arlen;
+    else
+        arlen_reg <= arlen_reg;
+end
+
+//arsize_reg - fixed value during all of the work time
+always@(posedge clk or negedge rst_n)
+begin
+    if(~rst_n)
+        arsize_reg <= 3'd0;
+    else if(acc_arvalid && acc_arready)
+        arsize_reg <= acc_arsize;
+    else
+        arsize_reg <= arsize_reg;
+end
+
+//arburst_reg - fixed value during all of the work time
+always@(posedge clk or negedge rst_n)
+begin
+    if(~rst_n)
+        arburst_reg <= 2'd0;
+    else if(acc_arvalid && acc_arready)
+        arburst_reg <= acc_arburst;
+    else
+        arburst_reg <= arburst_reg;
+end
 //******************************************* axi interface of waddr channel *******************************************
 //aw_ready control logic
 always@(posedge clk or negedge rst_n)
@@ -276,7 +316,20 @@ begin
     else
         acc_bvalid <= acc_bvalid;
 end
-
+//******************************************* axi interface of araddr channel *******************************************
+always@(posedge clk or negedge rst_n)
+begin
+    if(~rst_n)
+        acc_arready <= 1'b0;
+    else if(acc_arready && acc_arvalid)
+        acc_arready <= 1'b0;
+    else
+        acc_arready <= acc_arvalid;
+end
+//******************************************* axi interface of ardata channel *******************************************
+assign acc_rlast = npu_rd_eop_data;
+assign acc_rvalid = npu_rd_vld_data;
+assign acc_rdata = npu_rd_data_data;
 //*************************** temp *************************** 
 always@(posedge clk or negedge rst_n)
 begin
@@ -402,5 +455,15 @@ begin
         npu_wr_data_data <= acc_wdata;
     else
         npu_wr_data_data <= 32'd0;
+end
+
+always@(posedge clk or negedge rst_n)
+begin
+    if(~rst_n)
+        npu_rd_sop_data <= 1'b0;
+    else if(acc_arvalid && acc_arready)
+        npu_rd_sop_data <= 1'b1;
+    else
+        npu_rd_sop_data <= 1'b0;
 end
 endmodule
