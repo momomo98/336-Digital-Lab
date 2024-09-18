@@ -1,3 +1,25 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 2024/09/11 14:15:20
+// Design Name: 
+// Module Name: AXI2NPU_interface
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
 module AXI2NPU_interface(
     input  wire                         clk                        ,
     input  wire                         rst_n                      ,
@@ -19,9 +41,9 @@ module AXI2NPU_interface(
     input  wire                         acc_wvalid                 ,
     output reg                          acc_wready                 ,
     //write response channel signals
-    output wire        [   3: 0]        acc_bid                    ,
-    output wire        [   1: 0]        acc_bresp                  ,
-    output wire                         acc_bvalid                 ,
+    output reg         [   3: 0]        acc_bid                    ,
+    output reg         [   1: 0]        acc_bresp                  ,
+    output reg                          acc_bvalid                 ,
     input  wire                         acc_bready                 ,
     //read address channel signals
     input  wire        [   3: 0]        acc_arid                   ,
@@ -47,11 +69,19 @@ module AXI2NPU_interface(
     output reg                         npu_wr_eop_weight           ,
     output reg                         npu_wr_vld_weight           ,
     output reg        [  31: 0]        npu_wr_data_weight          ,
+    input wire                         npu_wr_err_weight           ,
     //NPU write data channel
     output reg                         npu_wr_sop_data             ,
     output reg                         npu_wr_eop_data             ,
     output reg                         npu_wr_vld_data             ,
-    output reg        [  31: 0]        npu_wr_data_data           
+    output reg        [  31: 0]        npu_wr_data_data            ,
+    input wire                         npu_wr_err_data             ,
+    //NPU read data channel
+    output reg                         npu_rd_sop_data,
+    input wire                         npu_rd_eop_data,
+    input wire                         npu_rd_vld_data,
+    input wire        [  31: 0]        npu_rd_data_data,
+    input wire                         npu_rd_err
 );
 
 //support outstanding 8
@@ -63,6 +93,14 @@ reg [2:0] awsize_reg;
 reg [2:0] awburst_reg; 
 //awport-reg 3'b100 is weight / 3'b000 is data
 reg [2:0] awport_reg;
+
+//temp
+reg       npu_wr_eop_data_temp;
+reg       npu_wr_eop_weight_temp;
+reg       acc_wlast_temp;
+reg       acc_wvalid_temp2;
+reg       acc_wvalid_temp;
+reg       awprot_fifo_rd_vld_temp;
 
 //awid fifo signal, will be used to process outstanding
 wire awid_fifo_wr_vld;
@@ -129,7 +167,7 @@ assign awid_fifo_rd_vld = acc_wlast;
 
 assign awprot_fifo_wr_vld = acc_awvalid && acc_awready;
 assign awprot_fifo_wr_data = (acc_awvalid && acc_awready) ? acc_awprot : 3'd0;
-assign awprot_fifo_rd_vld = acc_wlast;
+assign awprot_fifo_rd_vld = acc_wvalid && (~acc_wvalid_temp);
 
 //******************************************* register define and control *******************************************
 //awlen_reg - fixed value during all of the work time
@@ -170,7 +208,7 @@ always@(posedge clk or negedge rst_n)
 begin
     if(~rst_n)
         awport_reg <= 3'd0;
-    else if(acc_wlast)
+    else if(awprot_fifo_rd_vld_temp)
         awport_reg <= awprot_fifo_rd_data;
     else
         awport_reg <= awport_reg;
@@ -196,10 +234,10 @@ always@(posedge clk or negedge rst_n)
 begin
     if(~rst_n)
         acc_wready <= 1'b0;
-    else if(acc_awvalid && acc_awready)
-        acc_wready <= 1'b1;
     else if(acc_wlast)
         acc_wready <= 1'b0;
+    else if(acc_wvalid_temp2 && acc_wvalid) //only by see the boxing
+        acc_wready <= 1'b1;
     else
         acc_wready <= acc_wready;
 end
@@ -209,7 +247,7 @@ always@(posedge clk or negedge rst_n)
 begin
     if(~rst_n)
         acc_bid <= 4'b0000;
-    else if(acc_wlast)
+    else if(acc_wlast_temp)
         acc_bid <= awid_fifo_rd_data;
     else if(acc_bready && acc_bvalid)
         acc_bid <= 4'b0000;
@@ -221,9 +259,7 @@ always@(posedge clk or negedge rst_n)
 begin
     if(~rst_n)
         acc_bresp <= 2'b00;
-    else if(acc_wlast)
-        acc_bresp <= 2'b00;
-    else if(acc_bready && acc_bvalid)
+    else if(acc_wlast_temp)
         acc_bresp <= 2'b00;
     else
         acc_bresp <= acc_bresp;
@@ -233,12 +269,61 @@ always@(posedge clk or negedge rst_n)
 begin
     if(~rst_n)
         acc_bvalid <= 1'b0;
-    else if(acc_wlast)
+    else if(acc_wlast_temp)
         acc_bvalid <= 1'b1;
     else if(acc_bready && acc_bvalid)
         acc_bvalid <= 1'b0;
     else
         acc_bvalid <= acc_bvalid;
+end
+
+//*************************** temp *************************** 
+always@(posedge clk or negedge rst_n)
+begin
+    if(~rst_n)
+        npu_wr_eop_data_temp <= 1'd0;
+    else
+        npu_wr_eop_data_temp <= (acc_wlast && (~awport_reg[2]));
+end
+
+always@(posedge clk or negedge rst_n)
+begin
+    if(~rst_n)
+        npu_wr_eop_weight_temp <= 1'd0;
+    else
+        npu_wr_eop_weight_temp <= (acc_wlast && awport_reg[2]);
+end
+
+always@(posedge clk or negedge rst_n)
+begin
+    if(~rst_n)
+        acc_wlast_temp <= 1'd0;
+    else
+        acc_wlast_temp <= acc_wlast;
+end
+
+always@(posedge clk or negedge rst_n)
+begin
+    if(~rst_n)
+        acc_wvalid_temp <= 1'd0;
+    else
+        acc_wvalid_temp <= acc_wvalid;
+end
+
+always@(posedge clk or negedge rst_n)
+begin
+    if(~rst_n)
+        acc_wvalid_temp2 <= 1'd0;
+    else
+        acc_wvalid_temp2 <= acc_wvalid_temp;
+end
+
+always@(posedge clk or negedge rst_n)
+begin
+    if(~rst_n)
+        awprot_fifo_rd_vld_temp <= 1'd0;
+    else
+        awprot_fifo_rd_vld_temp <= awprot_fifo_rd_vld;
 end
 //******************************************* NPU interface *******************************************
 //NPU control logic of weight interface
@@ -246,7 +331,7 @@ always@(posedge clk or negedge rst_n)
 begin
     if(~rst_n)
         npu_wr_sop_weight <= 1'b0;
-    else if(acc_awvalid && acc_awready && awport_reg[2])
+    else if(acc_wvalid_temp2 && acc_wvalid && (~acc_wready) && awport_reg[2])
         npu_wr_sop_weight <= 1'b1;
     else
         npu_wr_sop_weight <= 1'b0;
@@ -256,10 +341,8 @@ always@(posedge clk or negedge rst_n)
 begin
     if(~rst_n)
         npu_wr_eop_weight <= 1'b0;
-    else if(acc_wlast && awport_reg[2])
-        npu_wr_eop_weight <= 1'b1;
     else
-        npu_wr_eop_weight <= 1'b0;
+        npu_wr_eop_weight <= npu_wr_eop_weight_temp;
 end
 
 always@(posedge clk or negedge rst_n)
@@ -287,7 +370,7 @@ always@(posedge clk or negedge rst_n)
 begin
     if(~rst_n)
         npu_wr_sop_data <= 1'b0;
-    else if(acc_awvalid && acc_awready && (~awport_reg[2]))
+    else if(acc_wvalid_temp2 && acc_wvalid && (~acc_wready) && (~awport_reg[2]))
         npu_wr_sop_data <= 1'b1;
     else
         npu_wr_sop_data <= 1'b0;
@@ -297,10 +380,8 @@ always@(posedge clk or negedge rst_n)
 begin
     if(~rst_n)
         npu_wr_eop_data <= 1'b0;
-    else if(acc_wlast && (~awport_reg[2]))
-        npu_wr_eop_data <= 1'b1;
     else
-        npu_wr_eop_data <= 1'b0;
+        npu_wr_eop_data <= npu_wr_eop_data_temp;
 end
 
 always@(posedge clk or negedge rst_n)

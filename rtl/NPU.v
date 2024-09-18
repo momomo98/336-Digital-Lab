@@ -28,55 +28,29 @@ module NPU(
     input wire wr_eop_weight,
     input wire wr_vld_weight,
     input wire [31:0] wr_data_weight,
+    output wire err_weight,
     
     input wire wr_sop_data,
     input wire wr_eop_data,
     input wire wr_vld_data,
     input wire [31:0] wr_data_data,
+    output wire err_data,
     //NPU read port
     output wire save_finish,
     
-    input wire rd_sop_0,
-    input wire rd_sop_1,
-    input wire rd_sop_2,
-    input wire rd_sop_3,
-    input wire rd_sop_4,
-    input wire rd_sop_5,
-    input wire rd_sop_6,
-    input wire rd_sop_7,
+    //pe_result_cache - top_result_control
+    input wire top_rd_sop,
+    output wire top_rd_eop,
+    output wire top_rd_vld,
+    output wire [31:0] top_rd_data,
+    output wire top_rd_err
 
-    output wire rd_eop_0,
-    output wire rd_eop_1,
-    output wire rd_eop_2,
-    output wire rd_eop_3,
-    output wire rd_eop_4,
-    output wire rd_eop_5,
-    output wire rd_eop_6,
-    output wire rd_eop_7,
-
-    output wire rd_vld_0,
-    output wire rd_vld_1,
-    output wire rd_vld_2,
-    output wire rd_vld_3,
-    output wire rd_vld_4,
-    output wire rd_vld_5,
-    output wire rd_vld_6,
-    output wire rd_vld_7,
-
-    output wire [15:0] rd_data_0,
-    output wire [15:0] rd_data_1,
-    output wire [15:0] rd_data_2,
-    output wire [15:0] rd_data_3,
-    output wire [15:0] rd_data_4,
-    output wire [15:0] rd_data_5,
-    output wire [15:0] rd_data_6,
-    output wire [15:0] rd_data_7
 );
 
     wire                                       pe_rd_sop_0                ;
     wire                                       pe_rd_sop_1                ;
     wire                                       clear                      ;
-    wire                                       save_sop                   ;
+    wire                                       save_sop                   ; 
     
     wire                                       i_pe_array_weight_vld0     ;
     wire                                       i_pe_array_weight_vld1     ;
@@ -178,19 +152,29 @@ module NPU(
     
 assign i_pe_array_clear = clear;
 
-npu_controller npu_controller(
+npu_controller#(
+   .weight_len     (36            ),
+   .data_len       (10            )
+) npu_controller(
     .clk(clk),
     .rst_n(rst_n),
     //AXI2NPU_interface
-    .wr_eop_data(wr_eop_data),
-    .wr_eop_weight(wr_eop_weight),
+    .wr_sop_weight                      (wr_sop_weight             ),
+    .wr_eop_weight                      (wr_eop_weight             ),
+    .wr_vld_weight                      (wr_vld_weight             ),
+    .err_weight                         (err_weight                ),
+    //NPU write data channel
+    .wr_sop_data                        (wr_sop_data               ),
+    .wr_eop_data                        (wr_eop_data               ),
+    .wr_vld_data                        (wr_vld_data               ),
+    .err_data                           (err_data                  ),
     //pe_array
     .clear(clear),
     //pe_control
     .rd_sop_0(pe_rd_sop_0),
     .rd_sop_1(pe_rd_sop_1),
     //pe_result_cache
-    .rd_eop({rd_eop_7,rd_eop_6,rd_eop_5,rd_eop_4,rd_eop_3,rd_eop_2,rd_eop_1,rd_eop_0}),
+    .rd_eop(top_rd_eop),
     .save_finish(save_finish),
     .save_sop(save_sop)
     );   
@@ -203,6 +187,7 @@ pe_control_data pe_control_data(
     .wr_eop                             (wr_eop_data                    ),
     .wr_vld                             (wr_vld_data                    ),
     .wr_data                            (wr_data_data                   ),
+    .err_data                           (err_data                       ),
     .rd_sop                             (pe_rd_sop_0                    ),
     
     //pe_data
@@ -390,37 +375,10 @@ pe_result_cache pe_result_cache(
     .result5_7                          (o_pe_array_result5_7                 ),
     .result6_7                          (o_pe_array_result6_7                 ),
     .result7_7                          (o_pe_array_result7_7                 ),
-    .rd_sop_0                           (rd_sop_0                  ),
-    .rd_sop_1                           (rd_sop_1                  ),
-    .rd_sop_2                           (rd_sop_2                  ),
-    .rd_sop_3                           (rd_sop_3                  ),
-    .rd_sop_4                           (rd_sop_4                  ),
-    .rd_sop_5                           (rd_sop_5                  ),
-    .rd_sop_6                           (rd_sop_6                  ),
-    .rd_sop_7                           (rd_sop_7                  ),
-    .rd_eop_0                           (rd_eop_0                  ),
-    .rd_eop_1                           (rd_eop_1                  ),
-    .rd_eop_2                           (rd_eop_2                  ),
-    .rd_eop_3                           (rd_eop_3                  ),
-    .rd_eop_4                           (rd_eop_4                  ),
-    .rd_eop_5                           (rd_eop_5                  ),
-    .rd_eop_6                           (rd_eop_6                  ),
-    .rd_eop_7                           (rd_eop_7                  ),
-    .rd_vld_0                           (rd_vld_0                  ),
-    .rd_vld_1                           (rd_vld_1                  ),
-    .rd_vld_2                           (rd_vld_2                  ),
-    .rd_vld_3                           (rd_vld_3                  ),
-    .rd_vld_4                           (rd_vld_4                  ),
-    .rd_vld_5                           (rd_vld_5                  ),
-    .rd_vld_6                           (rd_vld_6                  ),
-    .rd_vld_7                           (rd_vld_7                  ),
-    .rd_data_0                          (rd_data_0                 ),
-    .rd_data_1                          (rd_data_1                 ),
-    .rd_data_2                          (rd_data_2                 ),
-    .rd_data_3                          (rd_data_3                 ),
-    .rd_data_4                          (rd_data_4                 ),
-    .rd_data_5                          (rd_data_5                 ),
-    .rd_data_6                          (rd_data_6                 ),
-    .rd_data_7                          (rd_data_7                 )
+    .top_rd_sop                           (top_rd_sop                  ),
+    .top_rd_eop                           (top_rd_eop                  ),
+    .top_rd_vld                           (top_rd_vld                  ),
+    .top_rd_data                          (top_rd_data                 ),
+    .top_rd_err                           (top_rd_err                  )
 );
 endmodule

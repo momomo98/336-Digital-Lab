@@ -97,44 +97,50 @@ module pe_result_cache(
     input wire [15:0] result5_7,
     input wire [15:0] result6_7,
     input wire [15:0] result7_7,
+    
+    input wire top_rd_sop,
+    output wire top_rd_eop,
+    output wire top_rd_vld,
+    output wire [31:0] top_rd_data,
+    output wire top_rd_err
 
-    input wire rd_sop_0,
-    input wire rd_sop_1,
-    input wire rd_sop_2,
-    input wire rd_sop_3,
-    input wire rd_sop_4,
-    input wire rd_sop_5,
-    input wire rd_sop_6,
-    input wire rd_sop_7,
-
-    output wire rd_eop_0,
-    output wire rd_eop_1,
-    output wire rd_eop_2,
-    output wire rd_eop_3,
-    output wire rd_eop_4,
-    output wire rd_eop_5,
-    output wire rd_eop_6,
-    output wire rd_eop_7,
-
-    output wire rd_vld_0,
-    output wire rd_vld_1,
-    output wire rd_vld_2,
-    output wire rd_vld_3,
-    output wire rd_vld_4,
-    output wire rd_vld_5,
-    output wire rd_vld_6,
-    output wire rd_vld_7,
-
-    output wire [15:0] rd_data_0,
-    output wire [15:0] rd_data_1,
-    output wire [15:0] rd_data_2,
-    output wire [15:0] rd_data_3,
-    output wire [15:0] rd_data_4,
-    output wire [15:0] rd_data_5,
-    output wire [15:0] rd_data_6,
-    output wire [15:0] rd_data_7
     );
+    
+    wire rd_sop_0;
+    wire rd_sop_1;
+    wire rd_sop_2;
+    wire rd_sop_3;
+    wire rd_sop_4;
+    wire rd_sop_5;
+    wire rd_sop_6;
+    wire rd_sop_7;
 
+    wire rd_eop_0;
+    wire rd_eop_1;
+    wire rd_eop_2;
+    wire rd_eop_3;
+    wire rd_eop_4;
+    wire rd_eop_5;
+    wire rd_eop_6;
+    wire rd_eop_7;
+
+    wire rd_vld_0;
+    wire rd_vld_1;
+    wire rd_vld_2;
+    wire rd_vld_3;
+    wire rd_vld_4;
+    wire rd_vld_5;
+    wire rd_vld_6;
+    wire rd_vld_7;
+
+    wire [15:0] rd_data_0;
+    wire [15:0] rd_data_1;
+    wire [15:0] rd_data_2;
+    wire [15:0] rd_data_3;
+    wire [15:0] rd_data_4;
+    wire [15:0] rd_data_5;
+    wire [15:0] rd_data_6;
+    wire [15:0] rd_data_7;
 result_ram result_ram0
 (
     .clk(clk),
@@ -302,4 +308,47 @@ result_ram result_ram7
     .rd_vld(rd_vld_7),
     .rd_data(rd_data_7)
     );
+
+result_top_control u_result_top_control(
+    .clk                                (clk                       ),
+    .rst_n                              (rst_n                     ),
+    .rd_sop_0                           (rd_sop_0                  ),
+    .rd_eop_0                           (rd_eop_0                  ),
+    .rd_vld_0                           (rd_vld_0                  ),
+    .rd_data_0                          (rd_data_0                 ),
+    .rd_sop_1                           (rd_sop_1                  ),
+    .rd_eop_1                           (rd_eop_1                  ),
+    .rd_vld_1                           (rd_vld_1                  ),
+    .rd_data_1                          (rd_data_1                 ),
+    .rd_sop_2                           (rd_sop_2                  ),
+    .rd_eop_2                           (rd_eop_2                  ),
+    .rd_vld_2                           (rd_vld_2                  ),
+    .rd_data_2                          (rd_data_2                 ),
+    .rd_sop_3                           (rd_sop_3                  ),
+    .rd_eop_3                           (rd_eop_3                  ),
+    .rd_vld_3                           (rd_vld_3                  ),
+    .rd_data_3                          (rd_data_3                 ),
+    .rd_sop_4                           (rd_sop_4                  ),
+    .rd_eop_4                           (rd_eop_4                  ),
+    .rd_vld_4                           (rd_vld_4                  ),
+    .rd_data_4                          (rd_data_4                 ),
+    .rd_sop_5                           (rd_sop_5                  ),
+    .rd_eop_5                           (rd_eop_5                  ),
+    .rd_vld_5                           (rd_vld_5                  ),
+    .rd_data_5                          (rd_data_5                 ),
+    .rd_sop_6                           (rd_sop_6                  ),
+    .rd_eop_6                           (rd_eop_6                  ),
+    .rd_vld_6                           (rd_vld_6                  ),
+    .rd_data_6                          (rd_data_6                 ),
+    .rd_sop_7                           (rd_sop_7                  ),
+    .rd_eop_7                           (rd_eop_7                  ),
+    .rd_vld_7                           (rd_vld_7                  ),
+    .rd_data_7                          (rd_data_7                 ),
+    .top_rd_sop                         (top_rd_sop                ),
+    .top_rd_eop                         (top_rd_eop                ),
+    .top_rd_vld                         (top_rd_vld                ),
+    .top_rd_data                        (top_rd_data               ),
+    .top_rd_err                         (top_rd_err                )
+);
+
 endmodule

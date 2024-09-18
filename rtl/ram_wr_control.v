@@ -37,6 +37,7 @@ module ram_wr_control_data
     input wire wr_eop,
     input wire wr_vld,
     input wire [31:0] wr_data,
+    input wire err_data,
     
     output reg ram_wr_en,
     output reg [1:0] ram_wr_strb,
@@ -46,7 +47,11 @@ module ram_wr_control_data
 
 reg [9:0] d_select;
 reg [23:0] waddr;
+reg [23:0] waddr_last;
+
 reg [11:0] wstrb;
+reg [11:0] wstrb_last;
+
 reg [1:0] wr_sop_cnt;
 wire decode_rst;
 
@@ -68,6 +73,8 @@ always@(posedge clk or negedge rst_n)
 begin
     if(~rst_n)
         waddr <= 24'd0;
+    else if(err_data)
+        waddr <= waddr_last;
     else if(wr_sop && decode_rst)
         waddr <= {waddr6,waddr5,waddr4,waddr3,waddr2,waddr1};
     else if(wr_vld && d_select[0])
@@ -79,13 +86,35 @@ end
 always@(posedge clk or negedge rst_n)
 begin
     if(~rst_n)
+        waddr_last <= 24'd0;
+    else if(wr_sop)
+        waddr_last <= waddr;
+    else
+        waddr_last <= waddr_last;
+end
+
+always@(posedge clk or negedge rst_n)
+begin
+    if(~rst_n)
         wstrb <= 12'd0;
+    else if(err_data)
+        wstrb <= wstrb_last;
     else if(wr_sop && decode_rst)
         wstrb <= {wr_strb6,wr_strb5,wr_strb4,wr_strb3,wr_strb2,wr_strb1};
     else if(wr_vld && d_select[0])
         wstrb <= wstrb >> 2;
     else
         wstrb <= wstrb;
+end
+
+always@(posedge clk or negedge rst_n)
+begin
+    if(~rst_n)
+        wstrb_last <= 12'd0;
+    else if(wr_sop)
+        wstrb_last <= wstrb;
+    else
+        wstrb_last <= wstrb_last;
 end
 
 always@(posedge clk or negedge rst_n)
@@ -158,6 +187,7 @@ reg work_enable;
 reg [5:0] beat_cnt;
 
 reg [19:0] write_addr;
+
 reg [9:0]  write_strb;
 
 always@(posedge clk or negedge rst_n)

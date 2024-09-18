@@ -27,6 +27,7 @@ module pe_control_data(
     input wire wr_eop,
     input wire wr_vld,
     input wire [31:0] wr_data,
+    input wire err_data,
     
     input wire rd_sop,
     
@@ -130,6 +131,7 @@ ram_wr_control_data
     .wr_eop(wr_eop),
     .wr_vld(wr_vld),
     .wr_data(wr_data),
+    .err_data(err_data),
     
     .ram_wr_en(ram0_wr_en),
     .ram_wr_strb(ram0_wr_strb),
@@ -154,6 +156,7 @@ ram_wr_control_data
     .wr_eop(wr_eop),
     .wr_vld(wr_vld),
     .wr_data(wr_data),
+    .err_data(err_data),
     
     .ram_wr_en(ram1_wr_en),
     .ram_wr_strb(ram1_wr_strb),
@@ -178,6 +181,7 @@ ram_wr_control_data
     .wr_eop(wr_eop),
     .wr_vld(wr_vld),
     .wr_data(wr_data),
+    .err_data(err_data),
     
     .ram_wr_en(ram2_wr_en),
     .ram_wr_strb(ram2_wr_strb),
@@ -202,6 +206,7 @@ ram_wr_control_data
     .wr_eop(wr_eop),
     .wr_vld(wr_vld),
     .wr_data(wr_data),
+    .err_data(err_data),
     
     .ram_wr_en(ram3_wr_en),
     .ram_wr_strb(ram3_wr_strb),
@@ -226,6 +231,7 @@ ram_wr_control_data
     .wr_eop(wr_eop),
     .wr_vld(wr_vld),
     .wr_data(wr_data),
+    .err_data(err_data),
     
     .ram_wr_en(ram4_wr_en),
     .ram_wr_strb(ram4_wr_strb),
@@ -250,6 +256,7 @@ ram_wr_control_data
     .wr_eop(wr_eop),
     .wr_vld(wr_vld),
     .wr_data(wr_data),
+    .err_data(err_data),
     
     .ram_wr_en(ram5_wr_en),
     .ram_wr_strb(ram5_wr_strb),
@@ -274,6 +281,7 @@ ram_wr_control_data
     .wr_eop(wr_eop),
     .wr_vld(wr_vld),
     .wr_data(wr_data),
+    .err_data(err_data),
     
     .ram_wr_en(ram6_wr_en),
     .ram_wr_strb(ram6_wr_strb),
@@ -298,6 +306,7 @@ ram_wr_control_data
     .wr_eop(wr_eop),
     .wr_vld(wr_vld),
     .wr_data(wr_data),
+    .err_data(err_data),
     
     .ram_wr_en(ram7_wr_en),
     .ram_wr_strb(ram7_wr_strb),

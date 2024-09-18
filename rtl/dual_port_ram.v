@@ -75,5 +75,7 @@ end
 always@(posedge clk)begin
     if(rd_en)
         rdata <= mem[raddr];
+    else
+        rdata <= 32'd0;
 end
 endmodule
